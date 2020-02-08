@@ -2,21 +2,20 @@ package main;
 
 public class Torrezno {
 
-	private int unitCost;
+	//private int unitCost;
 	private Pigtype torreznoType;
 	private int deliciousness;
 	
 	
-	public Torrezno(int cost, Pigtype type, int delic)
+	public Torrezno(Pigtype type, int delic)
 	{
-		unitCost=cost;
 		torreznoType=type;
 		deliciousness=delic;
 	}
 	
 	public int getPrice()
 	{
-		return unitCost;
+		return torreznoType.getCost();
 	}
 	
 	public int getDeliciousness()

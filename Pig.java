@@ -12,6 +12,31 @@ public class Pig {
 		_size=size;
 		_type=type;
 	}
+
+	public int get_cost() {
+		return _cost;
+	}
+
+	public void set_cost(int _cost) {
+		this._cost = _cost;
+	}
+
+	public int get_size() {
+		return _size;
+	}
+
+	public void set_size(int _size) {
+		this._size = _size;
+	}
+
+	public Pigtype get_type() {
+		return _type;
+	}
+
+	public void set_type(Pigtype _type) {
+		this._type = _type;
+	}
+	
 	
 	
 }
