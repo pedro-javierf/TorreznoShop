@@ -1,2 +1,0 @@
-# TorreznoShop
-Amazing torrezno store
