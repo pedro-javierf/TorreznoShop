@@ -3,34 +3,67 @@ package ucm.is2.torreznoshop;
 import java.util.Random;
 import java.util.Scanner;
 
+import ucm.is2.torreznoshop.elements.Store;
+import ucm.is2.torreznoshop.utilities.Pig;
+import ucm.is2.torreznoshop.utilities.Pigtype;
+import ucm.is2.torreznoshop.utilities.Texts;
+
 public class Controller {
 
+	private boolean bossDefeated;
+	private boolean exit;
+	
 	private Random rand;
-	private Store charcuteriaManolo;
+	private Store myInternalCharcutero;
 	static int turn = 1;
 	
 	public Controller(Random r, Store s)
 	{
-		charcuteriaManolo = s;
+		myInternalCharcutero = s;
 		rand = r;
+		bossDefeated = false;
+		exit = false;
+	}
+	
+	public void getInput()
+	{
+		System.out.println(Texts.MENU);
+		
+		Scanner inputScanner = new Scanner(System.in);
+		int choice = inputScanner.nextInt();
+		
+		switch(choice)
+		{
+		case(1):
+			//do something
+		case(2):
+			//suadad
+		case(3):
+			//ahudgasuida
+		case(4):
+			exit = true;
+			break;
+		}
 	}
 	
 	public void showTurnInfo()
 	{
-		System.out.println("Turn: " + turn + " (Out of 8)");
-		System.out.println("Balance: " + charcuteriaManolo.get_balance());	
-		charcuteriaManolo.showPigs();
+		System.out.println("Turn: " + turn);
+		System.out.println("Balance: " + myInternalCharcutero.get_balance());	
+		myInternalCharcutero.showPigs();
 	}
 	
 	public boolean update()
 	{
 		boolean result = false;
-		if(turn == 8) {
-			System.out.println("Phew... That was the last client for today");
+		if(bossDefeated || exit) {
+			System.out.println("Phew... take that b*tch");
 			System.out.println("It is getting late...");
-			System.out.println("Do you want to manage again your store tomorrow? (y/n)");
+			System.out.println("The torreznos are safe. Should I leave the asylum yet? (y/n)");
+			
 			Scanner inputScanner = new Scanner(System.in);
 			char choice = inputScanner.next().charAt(0);
+			
 			if(choice == 'y') {
 				turn = 1;
 			}
@@ -47,14 +80,14 @@ public class Controller {
 	public void sell() {
 		int torreznos = rand.nextInt(100); 
 		int tipo = rand.nextInt(4);
-		System.out.println("A new citizen enters your shop!");
+		System.out.println("A new elder stablishes conversation with you!");
 		System.out.println("He wants to buy " + torreznos + " of your worldwide "+ Pigtype.toString(tipo) +" torreznos!");
 		System.out.println("Wanna sell? y/n");	
 		Scanner inputScanner = new Scanner(System.in);
 		char choice = inputScanner.next().charAt(0);
 		if(choice == 'y') {
 			//System.out.println(torreznos + " of the kind " + Pigtype.toString(tipo) + " are requested");	
-			charcuteriaManolo.sellTorreznos(torreznos, Pigtype.CLASSIC);
+			myInternalCharcutero.sellTorreznos(torreznos, Pigtype.CLASSIC);
 		}
 		else {
 			System.out.println("Bye then!");	
@@ -63,14 +96,14 @@ public class Controller {
 	}
 	
 	public void buy() {
-		Pig pig = new Pig(rand.nextInt(400),rand.nextInt(50),Pigtype.BELLOTA);
-		System.out.println("A new farmer enters your shop!");		
+		Pig pig = new Pig(rand.nextInt(400),rand.nextInt(50),Pigtype.values()[rand.nextInt(3)]);
+		System.out.println("A new elder stablishes conversation with you!");		
 		System.out.println("He wants to sell you an awesome pig of price "+pig.get_cost() + " and size "+pig.get_size());
 		System.out.println("Wanna buy? y/n");	
 		Scanner inputScanner = new Scanner(System.in);
 		char choice = inputScanner.next().charAt(0);
 		if(choice == 'y') {
-			  charcuteriaManolo.buyPig(pig);
+			myInternalCharcutero.buyPig(pig);
 		}
 		else {
 			System.out.println("Bye then!");	

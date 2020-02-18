@@ -1,0 +1,19 @@
+package ucm.is2.torreznoshop.tests;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ControllerTest {
+
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+
+	@Test
+	void test() {
+		assertEquals(true,true);
+	}
+
+}

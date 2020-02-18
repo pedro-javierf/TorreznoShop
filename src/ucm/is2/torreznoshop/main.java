@@ -2,6 +2,12 @@ package ucm.is2.torreznoshop;
 import java.util.Random;
 import java.util.Scanner;
 
+import ucm.is2.torreznoshop.elements.Store;
+import ucm.is2.torreznoshop.utilities.Pig;
+import ucm.is2.torreznoshop.utilities.Pigtype;
+import ucm.is2.torreznoshop.utilities.Texts;
+
+
 public class main {
 
 	//User interfaces from here
@@ -21,7 +27,14 @@ public class main {
 
 	public static void main(String[] args) {
 		
+		System.out.println(Texts.INITIALTEXT);
+		System.out.println(Texts.TUTORIAL);
+		
 		while(!end) {
+			
+			
+			
+			
 			AorB = rand.nextInt(2);
 			
 			c.showTurnInfo();
