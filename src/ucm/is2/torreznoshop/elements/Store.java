@@ -3,9 +3,6 @@ package ucm.is2.torreznoshop.elements;
 import java.util.ArrayList;
 import java.util.List;
 
-import ucm.is2.torreznoshop.utilities.Pig;
-import ucm.is2.torreznoshop.utilities.Pigtype;
-
 public class Store {
 
 	private int _balance;
@@ -26,7 +23,7 @@ public class Store {
 		
 	}
 	
-	public void showPigs()
+	void showPigs()
 	{
 		for(Pig l:availablePigs)
 		{
@@ -34,7 +31,7 @@ public class Store {
 		}
 	}
 	
-	public void sellTorreznos(int amount, Pigtype type)
+	void sellTorreznos(int amount, Pigtype type)
 	{
 		boolean found = false;
 		if(availableTorreznos[type.ordinal()]>=amount)
@@ -82,7 +79,7 @@ public class Store {
 		availablePigs.remove(p);
 	}
 	
-	public boolean buyPig(Pig p)
+	boolean buyPig(Pig p)
 	{
 		
 		//if we have enough balance->buy, add to pig list

@@ -1,5 +1,7 @@
 package ucm.is2.torreznoshop.elements;
 
+import ucm.is2.torreznoshop.spaces.Room;
+
 public class Entity {
 
 	private int HP;

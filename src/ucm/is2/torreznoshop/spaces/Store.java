@@ -1,7 +1,10 @@
-package ucm.is2.torreznoshop;
+package ucm.is2.torreznoshop.spaces;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ucm.is2.torreznoshop.utilities.Pig;
+import ucm.is2.torreznoshop.utilities.Pigtype;
 
 public class Store {
 
@@ -23,7 +26,7 @@ public class Store {
 		
 	}
 	
-	void showPigs()
+	public void showPigs()
 	{
 		for(Pig l:availablePigs)
 		{
@@ -31,7 +34,7 @@ public class Store {
 		}
 	}
 	
-	void sellTorreznos(int amount, Pigtype type)
+	public void sellTorreznos(int amount, Pigtype type)
 	{
 		boolean found = false;
 		if(availableTorreznos[type.ordinal()]>=amount)
@@ -79,7 +82,7 @@ public class Store {
 		availablePigs.remove(p);
 	}
 	
-	boolean buyPig(Pig p)
+	public boolean buyPig(Pig p)
 	{
 		
 		//if we have enough balance->buy, add to pig list

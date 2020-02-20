@@ -1,4 +1,7 @@
-package ucm.is2.torreznoshop;
+package ucm.is2.torreznoshop.item;
+
+import ucm.is2.torreznoshop.Pigtype;
+
 public class Torrezno {
 
 	//private int unitCost;
