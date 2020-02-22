@@ -6,7 +6,7 @@ public enum Texts {
 
 	public static String TUTORIAL = "You can do an action per turn.\n Your actions are:\n 1. Move to another room\n 2. Interact with an entity in the room\n 3. Consume Torreznos\n 4. Exit (life)";
 	
-	public static String MENU = " (1) move \n (2) interact \n (3) consume torrezno \n (4) exit ";
+	public static String MENU = " (1) Move \n (2) Interact \n (3) Consume Torrezno \n (4) Exit ";
 	
 	public static String BOOSFIGHT = "Hahaha! *undistinguishable roar* you will never leave this asylum! you will die here !!!\n All your torreznos will be mine !!!!!\n ";
 	

@@ -3,7 +3,11 @@ package ucm.is2.torreznoshop;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.text.html.parser.Entity;
+
+import ucm.is2.torreznoshop.elements.GameEntity;
 import ucm.is2.torreznoshop.elements.Store;
+import ucm.is2.torreznoshop.spaces.Room;
 //import ucm.is2.torreznoshop.utilities.Pig;
 import ucm.is2.torreznoshop.utilities.Pigtype;
 import ucm.is2.torreznoshop.utilities.Texts;
@@ -12,14 +16,15 @@ public class Controller {
 
 	private boolean bossDefeated;
 	private boolean exit;
-	
 	private Random rand;
 	private Store myInternalCharcutero;
 	static int turn = 1;
+	private Room currentRoom;
+	private GameEntity player = new GameEntity(10, 500, currentRoom);
 	
-	public Controller(Random r, Store s)
+	public Controller(Random r,  GameEntity e)
 	{
-		myInternalCharcutero = s;
+		player = e;
 		rand = r;
 		bossDefeated = false;
 		exit = false;
@@ -35,7 +40,7 @@ public class Controller {
 		switch(choice)
 		{
 		case(1):
-			//do something
+			
 		case(2):
 			//suadad
 		case(3):
@@ -49,7 +54,8 @@ public class Controller {
 	public void showTurnInfo()
 	{
 		System.out.println("Turn: " + turn);
-		System.out.println("Balance: " + myInternalCharcutero.get_balance());	
+		System.out.println("Balance: " + player.getMoney());	
+		System.out.println("Health (Out of 10): " + player.getHP());	
 	}
 	
 	public boolean update()
