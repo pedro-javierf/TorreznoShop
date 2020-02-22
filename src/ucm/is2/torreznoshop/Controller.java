@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import ucm.is2.torreznoshop.spaces.Store;
-import ucm.is2.torreznoshop.utilities.Pig;
+//import ucm.is2.torreznoshop.utilities.Pig;
 import ucm.is2.torreznoshop.utilities.Pigtype;
 import ucm.is2.torreznoshop.utilities.Texts;
 
@@ -94,20 +94,20 @@ public class Controller {
 		}
 		
 	}
-	
+
 	public void buy() {
-		Pig pig = new Pig(rand.nextInt(400),rand.nextInt(50),Pigtype.values()[rand.nextInt(3)]);
-		System.out.println("A new elder stablishes conversation with you!");		
-		System.out.println("He wants to sell you an awesome pig of price "+pig.get_cost() + " and size "+pig.get_size());
-		System.out.println("Wanna buy? y/n");	
-		Scanner inputScanner = new Scanner(System.in);
-		char choice = inputScanner.next().charAt(0);
-		if(choice == 'y') {
-			myInternalCharcutero.buyPig(pig);
-		}
-		else {
-			System.out.println("Bye then!");	
-		}
+//		Pig pig = new Pig(rand.nextInt(400),rand.nextInt(50),Pigtype.values()[rand.nextInt(3)]);
+//		System.out.println("A new elder stablishes conversation with you!");		
+//		System.out.println("He wants to sell you an awesome pig of price "+pig.get_cost() + " and size "+pig.get_size());
+//		System.out.println("Wanna buy? y/n");	
+//		Scanner inputScanner = new Scanner(System.in);
+//		char choice = inputScanner.next().charAt(0);
+//		if(choice == 'y') {
+//			myInternalCharcutero.buyPig(pig);
+//		}
+//		else {
+//			System.out.println("Bye then!");	
+//		}
 	}
 	
 	

@@ -1,6 +1,5 @@
 package ucm.is2.torreznoshop.item;
-
-import ucm.is2.torreznoshop.Pigtype;
+import ucm.is2.torreznoshop.utilities.Pigtype;
 
 public class Torrezno {
 
