@@ -2,7 +2,7 @@ package ucm.is2.torreznoshop;
 import java.util.Random;
 import java.util.Scanner;
 
-import ucm.is2.torreznoshop.spaces.Store;
+import ucm.is2.torreznoshop.elements.Store;
 import ucm.is2.torreznoshop.utilities.Pigtype;
 import ucm.is2.torreznoshop.utilities.Texts;
 

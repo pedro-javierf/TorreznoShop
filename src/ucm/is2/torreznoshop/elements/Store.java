@@ -24,7 +24,7 @@ public class Store {
 	}
 	
 	
-	void sellTorreznos(int amount, Pigtype type) {
+	public void sellTorreznos(int amount, Pigtype type) {
 		if(availableTorreznos[type.ordinal()]>=amount) {
 			availableTorreznos[type.ordinal()] -= amount;
 			_balance += amount * type.getCost();
