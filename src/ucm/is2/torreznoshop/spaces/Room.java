@@ -25,6 +25,18 @@ public class Room {
 		ySize=y;
 	}
 	
+	public List<Door> getDoorList()
+	{
+		//ideally i would return a copy list
+		return doorList;
+	}
+	
+	public List<Door> getEntityList()
+	{
+		//ideally i would return a copy list
+		return entityList;
+	}
+	
 	public int getxSize(){return xSize;}
 	public int getySize(){return ySize;}
 	
