@@ -32,6 +32,7 @@ public class Controller {
 	
 	public void drawGame()
 	{
+		System.out.println("---------------------------------------");
 		for(int i = 0; i <= currentRoom.getxSize(); i++)
 		{
 			for(int j = 0; i <= currentRoom.getySize(); j++)
