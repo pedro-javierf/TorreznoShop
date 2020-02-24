@@ -7,6 +7,8 @@ public class GameEntity {
 	private int money;
 	private int vitalEnergy;
 	
+	private int xPos;
+	private int yPos;
 	private int torreznoCount;
 	
 	Room currentRoom;
@@ -20,6 +22,36 @@ public class GameEntity {
 		this.currentRoom = startingRoom;
 	}
 
+	public int getX()
+	{
+		return xPos;
+	}
+	
+	public int getY()
+	{
+		return yPos;
+	}
+	
+	public boolean moveInX(int amount)
+	{
+		if(xPos + amount >= 0)
+		{
+			xPos+=amount;
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean moveInY(int amount)
+	{
+		if(yPos + amount >= 0)
+		{
+			yPos+=amount;
+			return true;
+		}
+		return false;
+	}
+	
 	public boolean consume(int torreznoNum)
 	{
 		if(torreznoNum <= torreznoCount)
