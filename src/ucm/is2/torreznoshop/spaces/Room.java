@@ -12,13 +12,17 @@ public class Room {
 	private List<Door> doorList;
 	private List<GameEntity> entityList;
 	private Building currentBuilding;
+	private int xSize;
+	private int ySize;
 	
-	Room(String name, List<Door> doorLst, Building currentB)
+	Room(String name, List<Door> doorLst, Building currentB,int x,int y)
 	{
 		this.name = name;
 		doorList = doorLst;
 		entityList = new ArrayList<GameEntity>();
 		currentBuilding = currentB;
+		xSize=x;
+		ySize=y;
 	}
 	
 }
