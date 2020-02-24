@@ -25,4 +25,7 @@ public class Room {
 		ySize=y;
 	}
 	
+	public int getxSize(){return xSize;}
+	public int getySize(){return ySize;}
+	
 }
