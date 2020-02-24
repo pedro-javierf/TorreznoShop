@@ -20,7 +20,7 @@ public class Controller {
 	private Store myInternalCharcutero;
 	static int turn = 1;
 	private Room currentRoom;
-	private GameEntity player = new GameEntity(10, 500, currentRoom);
+	private GameEntity player = new Player(10, 500, currentRoom);
 	
 	public Controller(Random r,  GameEntity e)
 	{
