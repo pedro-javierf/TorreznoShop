@@ -30,6 +30,11 @@ public class Controller {
 		exit = false;
 	}
 	
+	public void drawGame()
+	{
+		
+	}
+	
 	public void getInput()
 	{
 		System.out.println(Texts.MENU);
