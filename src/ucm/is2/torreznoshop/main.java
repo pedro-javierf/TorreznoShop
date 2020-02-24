@@ -31,6 +31,7 @@ public class main {
 		
 		while(!end) {
 			
+			c.drawGame();
 			AorB = rand.nextInt(2);
 			
 			c.showTurnInfo();
