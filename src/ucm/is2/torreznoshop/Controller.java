@@ -52,6 +52,20 @@ public class Controller {
 		return(player.consume(num));
 	}
 	
+	boolean askUserMove()
+	{
+		System.out.println("how many x: ");
+		Scanner inputScanner = new Scanner(System.in);
+		int x = inputScanner.nextInt();	
+		
+		System.out.println("how many y: ");
+		Scanner inputScanner = new Scanner(System.in);
+		int y = inputScanner.nextInt();	
+		
+		//feo y malo d cojone
+		return(player.moveX(x) && player.moveY(y));
+	}
+	
 	public void getInput()
 	{
 		System.out.println(Texts.MENU);
@@ -62,13 +76,16 @@ public class Controller {
 		switch(choice)
 		{
 		case(1)://move
-			
+			if(askUserMove())
+				{System.out.println("success");}
+			else
+				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
 			//suadad
 			break;
 		case(3)://consume torrezno
-			if(consumeTorreznos)
+			if(consumeTorreznos())
 				{System.out.println("success");}
 			else
 				{System.out.println("you don-t have so many torreznos bro");}
