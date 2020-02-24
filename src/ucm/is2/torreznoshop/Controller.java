@@ -32,12 +32,25 @@ public class Controller {
 	
 	public void drawGame()
 	{
+		List<Door> doors = currentRoom.getRoomList();
+		List<GameEntity> entities = currentRoom.getEntityList();
+		
+		char c;
+		
 		System.out.println("---------------------------------------");
 		for(int i = 0; i <= currentRoom.getxSize(); i++)
 		{
 			for(int j = 0; i <= currentRoom.getySize(); j++)
 			{
-				System.out.print("| "); //add hatever entity is hre
+				//how the hell do i do this efficiently
+				if(there is enity)
+					c = 'o';
+				else if(door)
+					c = 'd';
+				else
+					c=' ';
+				
+				System.out.print("|"+c); //add hatever entity or door is here
 			}
 			System.out.println("|");
 			System.out.println("---------------------------------------");
