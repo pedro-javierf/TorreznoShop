@@ -36,8 +36,10 @@ public class Controller {
 		{
 			for(int j = 0; i <= currentRoom.getySize(); j++)
 			{
-				System.out.println("");
+				System.out.print("| "); //add hatever entity is hre
 			}
+			System.out.println("|");
+			System.out.println("---------------------------------------");
 		}
 	}
 	
