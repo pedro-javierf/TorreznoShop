@@ -104,7 +104,7 @@ public class Controller {
 		int y = inputScanner.nextInt();	
 		
 		//feo y malo d cojone
-		return(player.moveInX(x) && player.moveInY(y));
+		return(player.moveInY(x) && player.moveInX(y));
 	}
 	
 	public void getInput()
