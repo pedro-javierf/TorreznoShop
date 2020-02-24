@@ -7,13 +7,25 @@ public class Door {
 	
 	private boolean locked;
 	
-	Door(Room r1, Room r2)
+	private int xPos;
+	private int yPos;
+	
+	
+	Door(Room r1, Room r2, int x, int y)
 	{
+		xPos = x;
+		yPos = y;
 		room1ref = r1;
 		room2ref = r2;
 		locked = false;
 	}
 	
+	public int getXpos()
+		return xPos;
+	
+	public int getYpos()
+		return yPos;
+		
 	public Room getNextRoom()
 		return room2ref;
 	
