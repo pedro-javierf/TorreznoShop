@@ -61,10 +61,24 @@ public class Controller {
 	public boolean update()
 	{
 		boolean result = false;
-		if(bossDefeated || exit) {
+		if(bossDefeated) {
 			System.out.println("Phew... take that b*tch");
 			System.out.println("It is getting late...");
 			System.out.println("The torreznos are safe. Should I leave the asylum yet? (y/n)");
+			
+			Scanner inputScanner = new Scanner(System.in);
+			char choice = inputScanner.next().charAt(0);
+			
+			if(choice == 'y') {
+				turn = 1;
+			}
+			else {
+				result = true;
+			}
+		}
+		else if(exit)
+		{
+			System.out.println("The torreznos are safe. Should I leave the game? (y/n)");
 			
 			Scanner inputScanner = new Scanner(System.in);
 			char choice = inputScanner.next().charAt(0);
