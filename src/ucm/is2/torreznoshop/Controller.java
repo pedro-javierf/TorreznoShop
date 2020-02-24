@@ -43,6 +43,14 @@ public class Controller {
 		}
 	}
 	
+	boolean consumeTorreznos()
+	{
+		System.out.println("how many torreznos you want to consume: ");
+		Scanner inputScanner = new Scanner(System.in);
+		int num = inputScanner.nextInt();	
+		return(player.consume(num));
+	}
+	
 	public void getInput()
 	{
 		System.out.println(Texts.MENU);
@@ -52,12 +60,18 @@ public class Controller {
 		
 		switch(choice)
 		{
-		case(1):
+		case(1)://move
 			
-		case(2):
+			break;
+		case(2)://interact
 			//suadad
-		case(3):
-			//ahudgasuida
+			break;
+		case(3)://consume torrezno
+			if(consumeTorreznos)
+				{System.out.println("success");}
+			else
+				{System.out.println("you don-t have so many torreznos bro");}
+			break;
 		case(4):
 			exit = true;
 			break;
