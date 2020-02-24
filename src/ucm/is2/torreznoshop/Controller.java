@@ -1,12 +1,16 @@
 package ucm.is2.torreznoshop;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.text.html.parser.Entity;
 
+import ucm.is2.torreznoshop.elements.Player;
 import ucm.is2.torreznoshop.elements.GameEntity;
 import ucm.is2.torreznoshop.elements.Store;
+import ucm.is2.torreznoshop.spaces.Building;
+import ucm.is2.torreznoshop.spaces.Door;
 import ucm.is2.torreznoshop.spaces.Room;
 //import ucm.is2.torreznoshop.utilities.Pig;
 import ucm.is2.torreznoshop.utilities.Pigtype;
@@ -19,41 +23,66 @@ public class Controller {
 	private Random rand;
 	private Store myInternalCharcutero;
 	static int turn = 1;
-	private Room currentRoom;
-	private GameEntity player = new Player(10, 500, currentRoom);
 	
-	public Controller(Random r,  GameEntity e)
+	private Building currentBuilding;
+	
+	private GameEntity player;
+	
+	public Controller(Random r,  Player mainPlayer, Building initialBuilding)
 	{
-		player = e;
+		currentBuilding = initialBuilding;
+		player = mainPlayer;
 		rand = r;
+		
 		bossDefeated = false;
 		exit = false;
+		
+		//Init the rooms and so on
+		currentBuilding.initBuilding();
+		currentBuilding.setPlayer(mainPlayer);
 	}
+	
+
 	
 	public void drawGame()
 	{
-		List<Door> doors = currentRoom.getRoomList();
-		List<GameEntity> entities = currentRoom.getEntityList();
+		List<Door> doors = currentBuilding.getCurrentRoom().getDoorList();
+		List<GameEntity> entities = currentBuilding.getCurrentRoom().getEntityList();
 		
-		char c;
+		String c;
 		
-		System.out.println("---------------------------------------");
-		for(int i = 0; i <= currentRoom.getxSize(); i++)
+		String DASHES = new String(new char[(currentBuilding.getCurrentRoom().getySize()*4)+1]).replace("\0", "-");
+		
+		System.out.println(currentBuilding.getCurrentRoom().getName());
+		System.out.println("  0   1   2   3   4   5   6   7   8  ...");
+		System.out.println(DASHES);
+		for(int i = 0; i < currentBuilding.getCurrentRoom().getxSize(); i++)
 		{
-			for(int j = 0; i <= currentRoom.getySize(); j++)
+			for(int j = 0; j < currentBuilding.getCurrentRoom().getySize(); j++)
 			{
 				//how the hell do i do this efficiently
-				if(there is enity)
-					c = 'o';
-				else if(door)
-					c = 'd';
-				else
-					c=' ';
+				c = "   ";
+				for(Door d: doors)
+				{
+					if(d.getXpos()==i && d.getYpos()==j)
+					{
+						c= " D ";
+					}
+				}
 				
+				for(GameEntity g: entities)
+				{
+					if(g.getX()==i && g.getY()==j)
+					{
+						c= " E "; //better, c = g.toString() to diferentiate between player and NPCs for example
+					}
+				}
+
+
 				System.out.print("|"+c); //add hatever entity or door is here
 			}
 			System.out.println("|");
-			System.out.println("---------------------------------------");
+			System.out.println(DASHES);
 		}
 	}
 	
@@ -72,7 +101,6 @@ public class Controller {
 		int x = inputScanner.nextInt();	
 		
 		System.out.println("how many y: ");
-		Scanner inputScanner = new Scanner(System.in);
 		int y = inputScanner.nextInt();	
 		
 		//feo y malo d cojone
@@ -95,7 +123,7 @@ public class Controller {
 				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
-			//suadad
+			System.out.println("NOT YET IMPLEMENTED");
 			break;
 		case(3)://consume torrezno
 			if(consumeTorreznos())
@@ -116,6 +144,31 @@ public class Controller {
 		System.out.println("Health (Out of 10): " + player.getHP());	
 	}
 	
+	protected void updateInteractions()
+	{
+		List<Door> doors = currentBuilding.getCurrentRoom().getDoorList();
+		List<GameEntity> entities = currentBuilding.getCurrentRoom().getEntityList();
+		
+		
+
+		for(Door d: doors)
+		{
+			for(GameEntity g: entities)
+			{
+				if(g.getX()==d.getXpos() && g.getY()==d.getYpos())
+				{
+					//We are in a door! go to the next room
+					currentBuilding.setCurrentRoom(d.getNextRoom());
+					//player.setRoom(d.getNextRoom());
+					currentBuilding.getCurrentRoom().addEntity(player);
+					
+					System.out.println("ROOM SWAP! Exiting "+ d.getCurrentRoom().getName() +" and Entering " + d.getNextRoom().getName() );
+				}
+			}
+		}
+				
+	}
+	
 	public boolean update()
 	{
 		boolean result = false;
@@ -128,10 +181,10 @@ public class Controller {
 			char choice = inputScanner.next().charAt(0);
 			
 			if(choice == 'y') {
-				turn = 1;
+				result = true;
 			}
 			else {
-				result = true;
+				turn = 1;
 			}
 		}
 		else if(exit)
@@ -142,13 +195,11 @@ public class Controller {
 			char choice = inputScanner.next().charAt(0);
 			
 			if(choice == 'y') {
-				turn = 1;
-			}
-			else {
 				result = true;
 			}
 		}
 		else {
+			updateInteractions();
 			turn++;
 		}
 		return result;	

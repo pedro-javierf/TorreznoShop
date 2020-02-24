@@ -17,11 +17,20 @@ public class GameEntity {
 	{
 		torreznoCount = 0;
 		vitalEnergy = 70;
+		
+		xPos = 2;
+		yPos = 1;
+		
 		this.HP=hp;
 		this.money=money;
 		this.currentRoom = startingRoom;
 	}
 
+	public void setRoom(Room r)
+	{
+		currentRoom = r;
+	}
+	
 	public int getX()
 	{
 		return xPos;
@@ -56,7 +65,7 @@ public class GameEntity {
 	{
 		if(torreznoNum <= torreznoCount)
 		{
-			torreznCount-=torreznoNum;
+			torreznoCount-=torreznoNum;
 			return true;
 		}
 		return false;

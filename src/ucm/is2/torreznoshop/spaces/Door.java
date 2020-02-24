@@ -1,5 +1,7 @@
 package ucm.is2.torreznoshop.spaces;
 
+import java.util.Scanner;
+
 public class Door {
 
 	private Room room1ref;
@@ -20,19 +22,19 @@ public class Door {
 		locked = false;
 	}
 	
-	public int getXpos()
-		return xPos;
+	public int getXpos() {
+		return xPos;}
 	
-	public int getYpos()
-		return yPos;
+	public int getYpos() {
+		return yPos;}
 		
-	public Room getNextRoom()
-		return room2ref;
+	public Room getNextRoom() {
+		return room2ref;}
 	
-	public Room getCurrentRoom()
-		return room1ref;
+	public Room getCurrentRoom() {
+		return room1ref;}
 	
-	pubic boolean promptUser()
+	public boolean promptUser()
 	{
 		System.out.println("Cross this door to the next room? (y/n)");
 			

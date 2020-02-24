@@ -2,7 +2,7 @@ package ucm.is2.torreznoshop.utilities;
 
 public enum Texts {
 	a,b;
-	public static String INITIALTEXT = "Welcome to Torreznoland.\nYou are an elder of this beautiful country who has been left for dead in this asylum";
+	public static String INITIALTEXT = "Welcome to Torreznoland.\nYou are an elder of this beautiful country who has been left for dead in this asylum\n";
 
 	public static String TUTORIAL = "You can do an action per turn.\n Your actions are:\n 1. Move to another room\n 2. Interact with an entity in the room\n 3. Consume Torreznos\n 4. Exit (life)";
 	

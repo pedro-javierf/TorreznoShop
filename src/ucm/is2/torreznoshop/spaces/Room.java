@@ -15,14 +15,36 @@ public class Room {
 	private int xSize;
 	private int ySize;
 	
-	Room(String name, List<Door> doorLst, Building currentB,int x,int y)
+	Room(String name, List<Door> doorLst, List<GameEntity> entityList, Building currentB, int x,int y)
 	{
 		this.name = name;
 		doorList = doorLst;
-		entityList = new ArrayList<GameEntity>();
+		
+		this.entityList = entityList;
+		
 		currentBuilding = currentB;
 		xSize=x;
 		ySize=y;
+	}
+	
+	public void setEntityList(List<GameEntity> el)
+	{
+		this.entityList = el;
+	}
+	
+	public void setDoorList(List<Door> dl)
+	{
+		this.doorList = dl;
+	}
+	
+	public void addEntity(GameEntity e)
+	{
+		entityList.add(e);
+	}
+	
+	public String getName()
+	{
+		return name;
 	}
 	
 	public List<Door> getDoorList()
@@ -31,7 +53,7 @@ public class Room {
 		return doorList;
 	}
 	
-	public List<Door> getEntityList()
+	public List<GameEntity> getEntityList()
 	{
 		//ideally i would return a copy list
 		return entityList;

@@ -1,15 +1,22 @@
 package ucm.is2.torreznoshop;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.text.html.parser.Entity;
 
 import ucm.is2.torreznoshop.elements.GameEntity;
+import ucm.is2.torreznoshop.elements.Player;
 import ucm.is2.torreznoshop.elements.Store;
+import ucm.is2.torreznoshop.spaces.Building;
 import ucm.is2.torreznoshop.spaces.Room;
 import ucm.is2.torreznoshop.utilities.Pigtype;
 import ucm.is2.torreznoshop.utilities.Texts;
 
+/*
+IS2
+With <3 from Pedro and Alberto 
+*/
 
 public class main {
 	//User interfaces from here
@@ -22,12 +29,13 @@ public class main {
 	int torreznos;
 	int tType;
 	static Random rand = new Random(); 	
-	static Controller c = new Controller(rand, new GameEntity(10, 500, room));
+	static Controller c = new Controller(rand, new Player(10, 500, room), new Building(new ArrayList<Room>()));
 
 	public static void main(String[] args) {
 		
 		System.out.println(Texts.INITIALTEXT);
-		System.out.println(Texts.TUTORIAL);
+		//System.out.println(Texts.TUTORIAL);
+		System.out.println("");
 		
 		while(!end) {
 			
