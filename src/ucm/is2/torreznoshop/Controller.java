@@ -75,7 +75,7 @@ public class Controller {
 				{
 					if(g.getY()==i && g.getX()==j)
 					{
-						c= " E "; //better, c = g.toString() to diferentiate between player and NPCs for example
+						c= g.toString(); //better, c = g.toString() to diferentiate between player and NPCs for example
 					}
 				}
 
@@ -160,7 +160,7 @@ public class Controller {
 		{
 			for(GameEntity g: entities)
 			{
-				if(g.getX()==d.getXpos() && g.getY()==d.getYpos())
+				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
 				{
 					//We are in a door! go to the next room
 					currentBuilding.setCurrentRoom(d.getNextRoom());

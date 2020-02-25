@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ucm.is2.torreznoshop.elements.GameEntity;
+import ucm.is2.torreznoshop.elements.NPC;
 import ucm.is2.torreznoshop.elements.Player;
 
 public class Building {

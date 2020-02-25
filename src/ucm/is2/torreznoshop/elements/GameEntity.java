@@ -114,7 +114,9 @@ public class GameEntity {
 		this.yPos = yPos;
 	}
 	
-	
+	public String toString() {
+		return " E ";
+	}
 
 	
 }
