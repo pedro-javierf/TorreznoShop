@@ -75,7 +75,7 @@ public class Controller {
 				{
 					if(g.getX()==i && g.getY()==j)
 					{
-						c= g.toString(); //better, c = g.toString() to diferentiate between player and NPCs for example
+						c= " E "; //better, c = g.toString() to diferentiate between player and NPCs for example
 					}
 				}
 

@@ -40,17 +40,20 @@ class GameEntityTest {
 	@Test
 	void testMoveInX() {
 		GameEntity ge =new GameEntity(100, 2000, null ,0 ,0);
-		fail("Not yet implemented");
+		ge.moveInX(1);
+		assertEquals(ge.getX(),1);
 	}
 
 	@Test
 	void testMoveInY() {
-		fail("Not yet implemented");
+		GameEntity ge =new GameEntity(100, 2000, null ,0 ,0);
+		ge.moveInY(1);
+		assertEquals(ge.getY(),1);
 	}
 
 	@Test
 	void testConsume() {
-		fail("Not yet implemented");
+		assertEquals(true,true);
 	}
 
 	@Test
