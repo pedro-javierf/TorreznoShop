@@ -111,8 +111,11 @@ public class Building {
 		
 		
 		
-		
-		
+		//Assign messages
+		habitacionInicial.setMessage("You are in your room. Cozy, right? Smells like ibuprofeno");
+		pasillo.setMessage("Amazing hallway :O . You hear an old radio playing Frank Sinatra...\nSo nostalgic...");
+		hall.setMessage("You face a huge hall with sofas \nA really old tv is on playing saber y ganar.\nThe daylight fills the room through the windows. \nJordi Hurtado's smile fills your heart meanwhile...");
+		garden.setMessage("You found yourself in garden full of flower pots.\nYou see a bee with the face of Arturo Valls buzzing around.");
 		
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);

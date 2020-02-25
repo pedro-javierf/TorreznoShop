@@ -14,6 +14,7 @@ public class Room {
 	private Building currentBuilding;
 	private int xSize;
 	private int ySize;
+	String message;
 	
 	Room(String name, List<Door> doorLst, List<GameEntity> entityList, Building currentB, int x,int y)
 	{
@@ -27,6 +28,20 @@ public class Room {
 		ySize=y;
 	}
 	
+	
+	
+	public String getMessage() {
+		return message;
+	}
+
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
+
 	public void setEntityList(List<GameEntity> el)
 	{
 		this.entityList = el;
