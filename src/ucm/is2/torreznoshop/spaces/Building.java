@@ -64,13 +64,15 @@ public class Building {
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1);
 		Door puertaAHall = new Door(pasillo, hall, 6, 1);
+		
+		//Create the door now pointing in reverse order
 		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
 		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0);
-		
+				
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
 		List<GameEntity> l2 = new ArrayList<GameEntity>();
-		List<GameEntity> l3 = new ArrayList<GameEntity>();
+		List<GameEntity> l3 = new ArrayList<GameEntity>();		
 		
 		
 		
@@ -96,6 +98,10 @@ public class Building {
 		
 		
 		
+		
+		
+		
+		
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
@@ -106,7 +112,22 @@ public class Building {
 
 		//////////////////////////////////////////////////////////////////////////
 		
+		
+		
 
+		
+		//Create an empty entity list
+
+		
+		//Put the doors into a door list
+
+		
+
+		
+		//Assign to the room its lists
+
+		
+		
 		//Add to the building
 		roomList.add(habitacionInicial);
 		roomList.add(pasillo);

@@ -103,6 +103,7 @@ public class Controller {
 		System.out.println("how many y: ");
 		int y = inputScanner.nextInt();	
 		
+		
 		//feo y malo d cojone
 		return(player.moveInY(x) && player.moveInX(y));
 	}

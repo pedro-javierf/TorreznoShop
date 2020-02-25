@@ -48,6 +48,11 @@ public class GameEntity {
 			xPos+=amount;
 			return true;
 		}
+		
+		else {
+			System.out.println("Bruh, you tried to go through walls (X axis). Put down the medication");
+			xPos = xPos + 0;
+		}
 		return false;
 	}
 	
@@ -57,6 +62,11 @@ public class GameEntity {
 		{
 			yPos+=amount;
 			return true;
+		}
+		
+		else {
+			System.out.println("Bruh, you tried to go through walls (Y axis). Put down the medication");
+			yPos = yPos + 0;
 		}
 		return false;
 	}
@@ -87,6 +97,19 @@ public class GameEntity {
 	public void setMoney(int money) {
 		this.money = money;
 	}
+
+
+
+	public void setxPos(int xPos) {
+		this.xPos = xPos;
+	}
+
+
+	public void setyPos(int yPos) {
+		this.yPos = yPos;
+	}
+	
+	
 
 	
 }
