@@ -141,23 +141,7 @@ public class Building {
 		roomList.add(habitacionInicial);
 
 		//////////////////////////////////////////////////////////////////////////
-		
-		
-		
 
-		
-		//Create an empty entity list
-
-		
-		//Put the doors into a door list
-
-		
-
-		
-		//Assign to the room its lists
-
-		
-		
 		//Add to the building
 		roomList.add(habitacionInicial);
 		roomList.add(pasillo);
