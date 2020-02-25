@@ -51,19 +51,26 @@ public class Building {
 		String habInit = "Habitacion Inicial";
 		//First room setup parameters
 		String habPas = "Pasillo";
+		//First room setup parameters
+		String habHall = "Hall principal";
 		
 		int size = 3;
 		
 		//FIrstly create the (empty) objects
 		Room habitacionInicial = new Room(habInit, null, null, this, size, size);
 		Room pasillo = new Room(habPas, null, null, this, size+4, size-1);
+		Room hall = new Room(habHall, null, null, this, size+4, size+4);
 		
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1);
-				
+		Door puertaAHall = new Door(pasillo, hall, 6, 1);
+		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
+		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0);
+		
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
-				
+		List<GameEntity> l2 = new ArrayList<GameEntity>();
+		List<GameEntity> l3 = new ArrayList<GameEntity>();
 		
 		
 		
@@ -71,15 +78,21 @@ public class Building {
 		List<Door> habitaInicial = new ArrayList<Door>();
 		habitaInicial.add(puertaAPasillo);
 		
+		List<Door> habitaPas = new ArrayList<Door>();
+		habitaPas.add(puertaAHabitacion);
+		habitaPas.add(puertaAHall);
+		
+		List<Door> habitaHall = new ArrayList<Door>();
+		habitaHall.add(puertaAPasilloReverse);
+		
 		
 		//Assign to the room its lists
 		habitacionInicial.setDoorList(habitaInicial);
 		habitacionInicial.setEntityList(l1);
-		
-		
-		
-		
-		
+		pasillo.setDoorList(habitaPas);
+		pasillo.setEntityList(l2);
+		hall.setEntityList(l3);
+		hall.setDoorList(habitaHall);
 		
 		
 		
@@ -93,24 +106,11 @@ public class Building {
 
 		//////////////////////////////////////////////////////////////////////////
 		
-		
-		
-		//Create the door now pointing in reverse order
-		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
-		
-		//Create an empty entity list
-		List<GameEntity> l2 = new ArrayList<GameEntity>();
-		
-		//Put the doors into a door list
-		List<Door> habitaPas = new ArrayList<Door>();
-		habitaPas.add(puertaAHabitacion);
-		
-		//Assign to the room its lists
-		pasillo.setDoorList(habitaPas);
-		pasillo.setEntityList(l2);
-		
+
 		//Add to the building
 		roomList.add(habitacionInicial);
+		roomList.add(pasillo);
+		roomList.add(hall);
 		
 		
 	}
