@@ -13,6 +13,8 @@ import ucm.is2.torreznoshop.spaces.Room;
 import ucm.is2.torreznoshop.utilities.Pigtype;
 import ucm.is2.torreznoshop.utilities.Texts;
 
+import ucm.is2.torreznoshop.experimental.*;
+
 /*
 IS2
 With <3 from Pedro and Alberto 
@@ -32,6 +34,9 @@ public class main {
 	static Controller c = new Controller(rand, new Player(10, 500, room), new Building(new ArrayList<Room>()));
 
 	public static void main(String[] args) {
+		
+		GraphApplication ga = new GraphApplication();
+		ga.runGUI();
 		
 		System.out.println(Texts.INITIALTEXT);
 		//System.out.println(Texts.TUTORIAL);

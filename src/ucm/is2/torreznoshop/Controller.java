@@ -55,7 +55,7 @@ public class Controller {
 		
 		System.out.println(currentBuilding.getCurrentRoom().getName());
 		System.out.println(currentBuilding.getCurrentRoom().getMessage());
-		System.out.println("  0   1   2   3   4   5   6   7   8  ...");
+		//System.out.println("  0   1   2   3   4   5   6   7   8  ...");
 		System.out.println(DASHES);
 		for(int i = 0; i < currentBuilding.getCurrentRoom().getxSize(); i++)
 		{
