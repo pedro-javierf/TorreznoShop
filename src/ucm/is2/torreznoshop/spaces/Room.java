@@ -16,7 +16,7 @@ public class Room {
 	private int ySize;
 	String message;
 	
-	Room(String name, List<Door> doorLst, List<GameEntity> entityList, Building currentB, int x,int y)
+	public Room(String name, List<Door> doorLst, List<GameEntity> entityList, Building currentB, int x,int y)
 	{
 		this.name = name;
 		doorList = doorLst;

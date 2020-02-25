@@ -13,13 +13,13 @@ public class GameEntity {
 	
 	Room currentRoom;
 	
-	public GameEntity(int hp, int money, Room startingRoom)
+	public GameEntity(int hp, int money, Room startingRoom, int startingX, int startingY)
 	{
 		torreznoCount = 0;
 		vitalEnergy = 70;
 		
-		xPos = 2;
-		yPos = 1;
+		xPos = startingX;
+		yPos = startingY;
 		
 		this.HP=hp;
 		this.money=money;
@@ -29,6 +29,11 @@ public class GameEntity {
 	public void setRoom(Room r)
 	{
 		currentRoom = r;
+	}
+	
+	public Room getRoom()
+	{
+		return currentRoom;
 	}
 	
 	public int getX()
