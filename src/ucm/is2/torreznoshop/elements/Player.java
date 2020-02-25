@@ -10,5 +10,8 @@ public Player(int hp, int money, Room startingRoom)
 		super(hp, money, startingRoom);
 	}
 
+public String toString() {
+	return " P ";
+}
 
 }
