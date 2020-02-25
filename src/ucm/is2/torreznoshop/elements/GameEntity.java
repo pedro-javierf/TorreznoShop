@@ -13,7 +13,7 @@ public class GameEntity {
 	
 	Room currentRoom;
 	
-	public GameEntity(int hp, int money, Room startingRoom, int startingX, int startingY)
+	public GameEntity(int hp, int money, Room startingRoom, int startingY, int startingX)
 	{
 		torreznoCount = 0;
 		vitalEnergy = 70;

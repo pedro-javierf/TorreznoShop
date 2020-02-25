@@ -82,8 +82,8 @@ public class Building {
 		List<GameEntity> l5 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
-		l1.add(new NPC(5, 0, habitacionInicial,0,1));
-			
+		l1.add(new NPC(5, 0, habitacionInicial,0,2));
+		l2.add(new NPC(5, 10, pasillo, 5, 0));
 		
 		//Put the doors into a door list
 		List<Door> habitaInicial = new ArrayList<Door>();

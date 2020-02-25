@@ -73,7 +73,7 @@ public class Controller {
 				
 				for(GameEntity g: entities)
 				{
-					if(g.getX()==i && g.getY()==j)
+					if(g.getY()==i && g.getX()==j)
 					{
 						c= g.toString(); //better, c = g.toString() to diferentiate between player and NPCs for example
 					}
@@ -100,13 +100,16 @@ public class Controller {
 		System.out.println("how many x: ");
 		Scanner inputScanner = new Scanner(System.in);
 		int x = inputScanner.nextInt();	
-		
+		if(x + player.getX() >= currentBuilding.getCurrentRoom().getxSize() || x + player.getX() < 0) {
+			return false;
+		}
 		System.out.println("how many y: ");
 		int y = inputScanner.nextInt();	
-		
-		
+		if(y + player.getY() >= currentBuilding.getCurrentRoom().getySize() || x + player.getY() < 0) {
+			return false;
+		}
 		//feo y malo d cojone
-		return(player.moveInY(x) && player.moveInX(y));
+		return(player.moveInX(x) && player.moveInY(y));
 	}
 	
 	public void getInput()
