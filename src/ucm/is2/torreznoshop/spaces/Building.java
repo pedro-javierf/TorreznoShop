@@ -53,6 +53,8 @@ public class Building {
 		String habPas = "Pasillo";
 		//First room setup parameters
 		String habHall = "Hall principal";
+		//First room setup parameters
+		String Garden = "Jardín";
 		
 		int size = 3;
 		
@@ -60,19 +62,23 @@ public class Building {
 		Room habitacionInicial = new Room(habInit, null, null, this, size, size);
 		Room pasillo = new Room(habPas, null, null, this, size+4, size-1);
 		Room hall = new Room(habHall, null, null, this, size+4, size+4);
+		Room garden = new Room(Garden, null, null, this, size+3, size+5);
 		
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1);
 		Door puertaAHall = new Door(pasillo, hall, 6, 1);
+		Door puertaAGarden = new Door(hall, garden, 5, 6);
 		
 		//Create the door now pointing in reverse order
 		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
 		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0);
+		Door puertaAHallReverse = new Door(garden, hall, 5, 3);
 				
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
 		List<GameEntity> l2 = new ArrayList<GameEntity>();
-		List<GameEntity> l3 = new ArrayList<GameEntity>();		
+		List<GameEntity> l3 = new ArrayList<GameEntity>();	
+		List<GameEntity> l4 = new ArrayList<GameEntity>();	
 		
 		
 		
@@ -86,6 +92,10 @@ public class Building {
 		
 		List<Door> habitaHall = new ArrayList<Door>();
 		habitaHall.add(puertaAPasilloReverse);
+		habitaHall.add(puertaAGarden);
+		
+		List<Door> habitaJardin = new ArrayList<Door>();
+		habitaJardin.add(puertaAHallReverse);
 		
 		
 		//Assign to the room its lists
@@ -95,6 +105,8 @@ public class Building {
 		pasillo.setEntityList(l2);
 		hall.setEntityList(l3);
 		hall.setDoorList(habitaHall);
+		garden.setDoorList(habitaJardin);
+		garden.setEntityList(l4);
 		
 		
 		
@@ -132,6 +144,7 @@ public class Building {
 		roomList.add(habitacionInicial);
 		roomList.add(pasillo);
 		roomList.add(hall);
+		roomList.add(garden);
 		
 		
 	}
