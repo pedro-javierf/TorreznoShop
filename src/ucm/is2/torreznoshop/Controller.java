@@ -100,12 +100,12 @@ public class Controller {
 		System.out.println("how many x: ");
 		Scanner inputScanner = new Scanner(System.in);
 		int x = inputScanner.nextInt();	
-		if(x + player.getX() >= currentBuilding.getCurrentRoom().getxSize() || x + player.getX() < 0) {
+		if(x + player.getX() > currentBuilding.getCurrentRoom().getySize() || x + player.getX() < 0) {
 			return false;
 		}
 		System.out.println("how many y: ");
 		int y = inputScanner.nextInt();	
-		if(y + player.getY() >= currentBuilding.getCurrentRoom().getySize() || x + player.getY() < 0) {
+		if(y + player.getY() > currentBuilding.getCurrentRoom().getxSize() || y + player.getY() < 0) {
 			return false;
 		}
 		//feo y malo d cojone
