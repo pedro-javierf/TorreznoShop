@@ -58,6 +58,8 @@ public class Building {
 		String Garden = "Jardin";
 		//First room setup parameters
 		String habComedor = "Comedor";
+		//First room setup parameters
+		String habCocina = "Cocina";
 		
 		int size = 3;
 		
@@ -67,18 +69,21 @@ public class Building {
 		Room hall = new Room(habHall, null, null, this, size+4, size+4);
 		Room garden = new Room(Garden, null, null, this, size+3, size+5);
 		Room comedor = new Room(habComedor, null, null, this, size+5, size+5);
+		Room kitchen = new Room(habCocina, null, null, this, size, size+5);
 		
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1);
 		Door puertaAHall = new Door(pasillo, hall, 6, 1);
 		Door puertaAGarden = new Door(hall, garden, 5, 6);
 		Door puertaAComedor = new Door(garden, comedor, 3, 0);
+		Door puertaACocina = new Door(comedor, kitchen, 1, 0);
 		
 		//Create the door now pointing in reverse order
 		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
 		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0);
 		Door puertaAHallReverse = new Door(garden, hall, 5, 3);
 		Door puertaAGardenReverse = new Door(comedor, garden, 3, 7);
+		Door puertaAComedorReverse = new Door(kitchen, comedor, 2, 5);
 				
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
@@ -86,6 +91,7 @@ public class Building {
 		List<GameEntity> l3 = new ArrayList<GameEntity>();	
 		List<GameEntity> l4 = new ArrayList<GameEntity>();	
 		List<GameEntity> l5 = new ArrayList<GameEntity>();	
+		List<GameEntity> l6 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
 		l1.add(new NPC(5, 0, habitacionInicial,0,2));
@@ -109,6 +115,11 @@ public class Building {
 		
 		List<Door> habitaComedor = new ArrayList<Door>();
 		habitaComedor.add(puertaAGardenReverse);
+		habitaComedor.add(puertaACocina);
+		
+		List<Door> habitaCocina = new ArrayList<Door>();
+		habitaCocina.add(puertaAComedorReverse);
+		
 		
 		
 		//Assign to the room its lists
@@ -122,6 +133,8 @@ public class Building {
 		garden.setEntityList(l4);
 		comedor.setDoorList(habitaComedor);
 		comedor.setEntityList(l5);
+		kitchen.setDoorList(habitaCocina);
+		kitchen.setEntityList(l6);
 		
 		
 		
@@ -132,6 +145,7 @@ public class Building {
 		hall.setMessage("You face a huge hall with sofas \nA really old tv is on playing saber y ganar.\nThe daylight fills the room through the windows. \nJordi Hurtado's smile fills your heart meanwhile...");
 		garden.setMessage("You found yourself in garden full of flower pots.\nYou see a bee with the face of Arturo Valls buzzing around.");
 		comedor.setMessage("A huge lot of tables stand in front of you.\nThey are covered wiith tableloths with a very poor taste.\nIt smells like deep-fried food and hate for the human race.");
+		kitchen.setMessage("Here comes the magic of that smell. \nThere is a box with frozen meat inside.\nIn the box it is written: First quality meat (Stalingrad's Horse Stable, 1945)");
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		

@@ -35,8 +35,8 @@ public class main {
 
 	public static void main(String[] args) {
 		
-		GraphApplication ga = new GraphApplication();
-		ga.runGUI();
+		//GraphApplication ga = new GraphApplication();
+		//ga.runGUI();
 		
 		System.out.println(Texts.INITIALTEXT);
 		//System.out.println(Texts.TUTORIAL);
