@@ -76,6 +76,7 @@ public class Building {
 		Door puertaAHall = new Door(pasillo, hall, 6, 1);
 		Door puertaAGarden = new Door(hall, garden, 5, 6);
 		Door puertaAComedor = new Door(garden, comedor, 3, 0);
+		Door puertaAComedorporPas = new Door(pasillo, comedor, 3, 1);
 		Door puertaACocina = new Door(comedor, kitchen, 1, 0);
 		
 		//Create the door now pointing in reverse order
@@ -84,6 +85,7 @@ public class Building {
 		Door puertaAHallReverse = new Door(garden, hall, 5, 3);
 		Door puertaAGardenReverse = new Door(comedor, garden, 3, 7);
 		Door puertaAComedorReverse = new Door(kitchen, comedor, 2, 5);
+		Door puertaAComedorReversePas = new Door(comedor, pasillo, 7, 3);
 				
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
@@ -104,6 +106,7 @@ public class Building {
 		List<Door> habitaPas = new ArrayList<Door>();
 		habitaPas.add(puertaAHabitacion);
 		habitaPas.add(puertaAHall);
+		habitaPas.add(puertaAComedorporPas);
 		
 		List<Door> habitaHall = new ArrayList<Door>();
 		habitaHall.add(puertaAPasilloReverse);
@@ -116,6 +119,7 @@ public class Building {
 		List<Door> habitaComedor = new ArrayList<Door>();
 		habitaComedor.add(puertaAGardenReverse);
 		habitaComedor.add(puertaACocina);
+		habitaComedor.add(puertaAComedorReversePas);
 		
 		List<Door> habitaCocina = new ArrayList<Door>();
 		habitaCocina.add(puertaAComedorReverse);

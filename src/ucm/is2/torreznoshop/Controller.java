@@ -162,12 +162,21 @@ public class Controller {
 			{
 				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
 				{
-					//We are in a door! go to the next room
-					currentBuilding.setCurrentRoom(d.getNextRoom());
-					//player.setRoom(d.getNextRoom());
-					currentBuilding.getCurrentRoom().addEntity(player);
+					System.out.println("Do you want to traverse this magic portal? (It's a normal door)\nYou would go from "+ currentBuilding.getCurrentRoom().getName() + " to "+ d.getNextRoom().getName()+ "\n(y/n)");
+					Scanner inputScanner = new Scanner(System.in);
+					char choice = inputScanner.next().charAt(0);
 					
-					System.out.println("ROOM SWAP! Exiting "+ d.getCurrentRoom().getName() +" and Entering " + d.getNextRoom().getName() );
+					if(choice == 'y') {
+						//We are in a door! go to the next room
+						currentBuilding.setCurrentRoom(d.getNextRoom());
+						//player.setRoom(d.getNextRoom());
+						currentBuilding.getCurrentRoom().addEntity(player);
+						System.out.println("ROOM SWAP! Exiting "+ d.getCurrentRoom().getName() +" and Entering " + d.getNextRoom().getName() );
+					}
+					else {
+						System.out.println("Nothing happened here...");
+					}
+					
 				}
 			}
 		}

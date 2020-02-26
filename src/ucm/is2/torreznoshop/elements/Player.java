@@ -7,7 +7,7 @@ public class Player extends GameEntity{
 
 public Player(int hp, int money, Room startingRoom)
 	{
-		super(hp, money, startingRoom, 2, 1);
+		super(hp, money, startingRoom, 1, 0);
 	}
 
 public String toString() {
