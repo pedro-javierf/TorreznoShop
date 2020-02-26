@@ -10,6 +10,7 @@ public class GameEntity {
 	private int xPos;
 	private int yPos;
 	private int torreznoCount;
+	String nameString;
 	
 	Room currentRoom;
 	
@@ -45,6 +46,12 @@ public class GameEntity {
 	{
 		return yPos;
 	}
+	
+	public String getName()
+	{
+		return nameString;
+	}
+	
 	
 	public boolean moveInX(int amount)
 	{

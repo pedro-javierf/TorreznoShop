@@ -54,7 +54,6 @@ public class Controller {
 		String DASHES = new String(new char[(currentBuilding.getCurrentRoom().getySize()*4)+1]).replace("\0", "-");
 		
 		System.out.println(currentBuilding.getCurrentRoom().getName());
-		System.out.println(currentBuilding.getCurrentRoom().getMessage());
 		//System.out.println("  0   1   2   3   4   5   6   7   8  ...");
 		System.out.println(DASHES);
 		for(int i = 0; i < currentBuilding.getCurrentRoom().getxSize(); i++)
@@ -128,7 +127,7 @@ public class Controller {
 				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
-			System.out.println("NOT YET IMPLEMENTED");
+			interactProto();
 			break;
 		case(3)://consume torrezno
 			if(consumeTorreznos())
@@ -139,6 +138,21 @@ public class Controller {
 		case(4):
 			exit = true;
 			break;
+		}
+	}
+	
+	public void interactProto() {
+		System.out.println("Room info: ");
+		System.out.println(currentBuilding.getCurrentRoom().getMessage());
+		System.out.println();
+		System.out.println("Entities in this room: ");
+		for(GameEntity g : currentBuilding.getCurrentRoom().getEntityList()) {
+			if(g.getName() == player.getName()) {
+				System.out.println("You (Manolo) are present in coordinates " + g.getX() + " " + g.getY());
+			}
+			else {
+			System.out.println(g.getName()+ " is present in coordinates " + g.getX() + " " + g.getY());
+			}
 		}
 	}
 	

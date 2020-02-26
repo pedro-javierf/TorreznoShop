@@ -8,10 +8,12 @@ public class NPC extends GameEntity {
 	private int xPos;
 	private int yPos;
 	String message;
+	String nameString;
 	
 	Room currentRoom;
-	public NPC(int hp, int money, Room startingRoom, int xpos, int posy) {
+	public NPC(String name,int hp, int money, Room startingRoom, int xpos, int posy) {
 		super(hp, money, startingRoom, xpos, posy);
+		this.nameString= name;
 	}
 	
 	
@@ -25,6 +27,10 @@ public class NPC extends GameEntity {
 
 	public int getyPos() {
 		return yPos;
+	}
+	
+	public String getName() {
+		return nameString;
 	}
 
 
