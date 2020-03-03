@@ -1,6 +1,8 @@
 package ucm.is2.torreznoshop.experimental;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
@@ -9,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -30,8 +33,17 @@ public class Board extends JPanel implements ActionListener {
 
     private void initBoard() {
     	
-        addKeyListener(new TAdapter());
-        setBackground(Color.black);
+        
+    	
+    	addKeyListener(new TAdapter());
+        
+    	
+    	//setLayout(new BorderLayout());
+        //JLabel background=new JLabel(new ImageIcon("C:\\Users\\usuario_local\\Downloads\\TorreznoShop-master\\src\\resources\\background.jpg"));
+        //add(background);
+        //background.setLayout(new FlowLayout());
+    	
+    	//setBackground(Color.black);
         setFocusable(true);
 
         player = new DrawablePlayer();

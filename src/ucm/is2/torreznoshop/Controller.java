@@ -8,7 +8,6 @@ import javax.swing.text.html.parser.Entity;
 
 import ucm.is2.torreznoshop.elements.Player;
 import ucm.is2.torreznoshop.elements.GameEntity;
-import ucm.is2.torreznoshop.elements.NPC;
 import ucm.is2.torreznoshop.elements.Store;
 import ucm.is2.torreznoshop.spaces.Building;
 import ucm.is2.torreznoshop.spaces.Door;
@@ -114,7 +113,6 @@ public class Controller {
 	
 	public void getInput()
 	{
-		List<GameEntity> entities = currentBuilding.getCurrentRoom().getEntityList();
 		System.out.println(Texts.MENU);
 		
 		Scanner inputScanner = new Scanner(System.in);
@@ -129,18 +127,7 @@ public class Controller {
 				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
-			boolean interacted = false;
-			for(GameEntity g : entities) {
-				if(canInteract(g)) {
-					interact(g);
-					interacted = true;
-				}
-			}
-			
-			if(!interacted) {
-				interactNoEntity();
-			}
-		
+			interactProto();
 			break;
 		case(3)://consume torrezno
 			if(consumeTorreznos())
@@ -154,7 +141,7 @@ public class Controller {
 		}
 	}
 	
-	public void interactNoEntity() {
+	public void interactProto() {
 		System.out.println("Room info: ");
 		System.out.println(currentBuilding.getCurrentRoom().getMessage());
 		System.out.println();
@@ -180,7 +167,6 @@ public class Controller {
 		boolean b4 = player.getX() == e.getX() && player.getY() == e.getY()-1;
 		return b1 || b2 || b3 || b4;
 	}
-
 
 
 	public void showTurnInfo()

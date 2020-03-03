@@ -35,6 +35,9 @@ public class main {
 
 	public static void main(String[] args) {
 		
+		MainMenuGraphApplication menu = new MainMenuGraphApplication();
+		menu.runGUI();
+		
 		//GraphApplication ga = new GraphApplication();
 		//ga.runGUI();
 		
