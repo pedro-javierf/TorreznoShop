@@ -21,7 +21,8 @@ public class DrawablePlayer extends Player {
 
 	    // Images for each animation
 	    private BufferedImage[] walkingLeft = {Sprite.getSprite(12, 10)}; // Gets the upper left images of my sprite sheet
-	    private BufferedImage[] walkingRight = {Sprite.getSprite(13, 8)};
+	    private BufferedImage[] walkingRight = {Sprite.getSprite(13,
+	    		8)};
 	    private BufferedImage[] walkingUp = {Sprite.getSprite(12, 8)};
 	    private BufferedImage[] standing = {Sprite.getSprite(14, 9)};
 
@@ -35,8 +36,6 @@ public class DrawablePlayer extends Player {
 	    protected Animation animation = standingAnim;
 	    
 	    
-	    
-	    
 	    public DrawablePlayer(int hp, int money, Room startingRoom) {
 			super(hp, money, startingRoom);
 			// TODO Auto-generated constructor stub
@@ -44,9 +43,10 @@ public class DrawablePlayer extends Player {
 	    
 	    public DrawablePlayer() {
 	    	super(100, 2000, null);
-	        loadImage();
+	        //loadImage();
 	    }
 
+	    /*
 	    private void loadImage() {
 	        
 	        ImageIcon ii = new ImageIcon("src/resources/OldMan.png");
@@ -54,7 +54,7 @@ public class DrawablePlayer extends Player {
 	        
 	        w = image.getWidth(null);
 	        h = image.getHeight(null);
-	    }
+	    }*/
 
 	    public void move() {
 	        

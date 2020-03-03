@@ -6,12 +6,13 @@ public class GameEntity {
 	private int HP;
 	private int money;
 	private int vitalEnergy;
+	
 	private int xPos;
 	private int yPos;
 	private int torreznoCount;
 	String nameString;
+	
 	Room currentRoom;
-	private String message;
 	
 	public GameEntity(int hp, int money, Room startingRoom, int startingY, int startingX)
 	{
@@ -123,17 +124,6 @@ public class GameEntity {
 	public String toString() {
 		return " E ";
 	}
-	
-	public String getMessage() {
-		return message;
-	}
-
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	
-	
 
 	
 }

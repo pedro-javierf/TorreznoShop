@@ -36,6 +36,7 @@ public class Sprite {
         height = image.getHeight(null);
     }
 
+    
     //Loads the sprite image
     protected void loadImage(String imageName) {
 
