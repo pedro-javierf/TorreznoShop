@@ -170,13 +170,15 @@ public class Controller {
 	}
 	
 	public void interact(GameEntity e) {
-		e.getMessage();
+		System.out.println(e.getMessage());
 	}
 	
 	private boolean canInteract(GameEntity e) {
-		boolean b1 = player.getX() == e.getX()+1 || player.getX() == e.getX()-1;
-		boolean b2 = player.getY() == e.getY()+1 || player.getY() == e.getY()-1;
-		return b1 && b2;
+		boolean b1 = player.getX() == e.getX()-1 && player.getY() == e.getY();
+		boolean b2 = player.getX() == e.getX()+1 && player.getY() == e.getY();
+		boolean b3 = player.getX() == e.getX() && player.getY() == e.getY()+1;
+		boolean b4 = player.getX() == e.getX() && player.getY() == e.getY()-1;
+		return b1 || b2 || b3 || b4;
 	}
 
 
