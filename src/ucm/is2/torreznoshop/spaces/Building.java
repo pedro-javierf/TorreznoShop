@@ -96,8 +96,14 @@ public class Building {
 		List<GameEntity> l6 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
-		l1.add(new NPC("Perrete de incognito",5, 0, habitacionInicial,0,2));
-		l2.add(new NPC("Ambrosio", 5, 10, pasillo, 5, 0));
+		GameEntity perrete = new NPC("Perrete de incognito",5, 0, habitacionInicial,0,2);
+		l1.add(perrete);
+		perrete.setMessage("*A jingle is heard* Woof, woof. (It is a dog, did you expect it to talk?)");
+		
+		GameEntity ambrosio = new NPC("Ambrosio", 5, 10, pasillo, 5, 0);
+		l2.add(ambrosio);
+		ambrosio.setMessage("Ambrosio's brain cannot work too much these days... ");
+		l3.add(new NPC("Aurelio", 5, 10000, hall, 6, 6));
 		
 		//Put the doors into a door list
 		List<Door> habitaInicial = new ArrayList<Door>();
