@@ -35,11 +35,13 @@ public class main {
 
 	public static void main(String[] args) {
 		
+		//GUI FUNCTIONS
+		/*
 		MainMenuGraphApplication menu = new MainMenuGraphApplication();
 		menu.runGUI();
-		
-		//GraphApplication ga = new GraphApplication();
-		//ga.runGUI();
+		GraphApplication ga = new GraphApplication();
+		ga.runGUI();
+		*/
 		
 		System.out.println(Texts.INITIALTEXT);
 		//System.out.println(Texts.TUTORIAL);

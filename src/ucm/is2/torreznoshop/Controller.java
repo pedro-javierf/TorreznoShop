@@ -194,6 +194,8 @@ public class Controller {
 					char choice = inputScanner.next().charAt(0);
 					
 					if(choice == 'y') {
+						player.setxPos(0);
+						player.setyPos(0);
 						//We are in a door! go to the next room
 						currentBuilding.setCurrentRoom(d.getNextRoom());
 						//player.setRoom(d.getNextRoom());
