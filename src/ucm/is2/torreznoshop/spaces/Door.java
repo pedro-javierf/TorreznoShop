@@ -13,13 +13,13 @@ public class Door {
 	private int yPos;
 	
 	
-	Door(Room r1, Room r2, int x, int y)
+	Door(Room r1, Room r2, int x, int y, boolean lock)
 	{
 		xPos = x;
 		yPos = y;
 		room1ref = r1;
 		room2ref = r2;
-		locked = false;
+		locked = lock;
 	}
 	
 	public int getXpos() {
@@ -33,6 +33,9 @@ public class Door {
 	
 	public Room getCurrentRoom() {
 		return room1ref;}
+	
+	public boolean isLocked()
+	{return locked;}
 	
 	public boolean promptUser()
 	{

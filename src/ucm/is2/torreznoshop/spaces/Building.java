@@ -76,22 +76,22 @@ public class Building {
 		Room pasilloaBoss = new Room(habPas2, null, null, this, size+3, size-1);
 		
 		//Creates one door asigned to these (empty) objects (rooms)
-		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1);
-		Door puertaAHall = new Door(pasillo, hall, 6, 1);
-		Door puertaAGarden = new Door(hall, garden, 5, 6);
-		Door puertaAComedor = new Door(garden, comedor, 3, 0);
-		Door puertaAComedorporPas = new Door(pasillo, comedor, 3, 1);
-		Door puertaACocina = new Door(comedor, kitchen, 1, 0);
-		Door puertaAPasillo2 = new Door(garden, pasilloaBoss, 0, 4);
+		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1,false);
+		Door puertaAHall = new Door(pasillo, hall, 6, 1,false);
+		Door puertaAGarden = new Door(hall, garden, 5, 6,false);
+		Door puertaAComedor = new Door(garden, comedor, 3, 0,false);
+		Door puertaAComedorporPas = new Door(pasillo, comedor, 3, 1,false);
+		Door puertaACocina = new Door(comedor, kitchen, 1, 0,false);
+		Door puertaAPasillo2 = new Door(garden, pasilloaBoss, 0, 4,false);
 		
 		//Create the door now pointing in reverse order
-		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0);
-		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0);
-		Door puertaAHallReverse = new Door(garden, hall, 5, 3);
-		Door puertaAGardenReverse = new Door(comedor, garden, 3, 7);
-		Door puertaAComedorReverse = new Door(kitchen, comedor, 2, 5);
-		Door puertaAComedorReversePas = new Door(comedor, pasillo, 7, 3);
-		Door puertaaGardenReversePas2 = new Door(pasilloaBoss, garden, 2, 0);
+		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0,false);
+		Door puertaAPasilloReverse = new Door(hall, pasillo, 4, 0,false);
+		Door puertaAHallReverse = new Door(garden, hall, 5, 3,false);
+		Door puertaAGardenReverse = new Door(comedor, garden, 3, 7,false);
+		Door puertaAComedorReverse = new Door(kitchen, comedor, 2, 5,false);
+		Door puertaAComedorReversePas = new Door(comedor, pasillo, 7, 3,false);
+		Door puertaaGardenReversePas2 = new Door(pasilloaBoss, garden, 2, 0,false);
 				
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();

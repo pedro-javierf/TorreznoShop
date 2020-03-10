@@ -26,7 +26,7 @@ public class Controller {
 	
 	private Building currentBuilding;
 	
-	private GameEntity player;
+	private Player player;
 	
 	public Controller(Random r,  Player mainPlayer, Building initialBuilding)
 	{
@@ -189,21 +189,28 @@ public class Controller {
 			{
 				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
 				{
-					System.out.println("Do you want to traverse this magic portal? (It's a normal door)\nYou would go from "+ currentBuilding.getCurrentRoom().getName() + " to "+ d.getNextRoom().getName()+ "\n(y/n)");
-					Scanner inputScanner = new Scanner(System.in);
-					char choice = inputScanner.next().charAt(0);
-					
-					if(choice == 'y') {
-						player.setxPos(0);
-						player.setyPos(0);
-						//We are in a door! go to the next room
-						currentBuilding.setCurrentRoom(d.getNextRoom());
-						//player.setRoom(d.getNextRoom());
-						currentBuilding.getCurrentRoom().addEntity(player);
-						System.out.println("ROOM SWAP! Exiting "+ d.getCurrentRoom().getName() +" and Entering " + d.getNextRoom().getName() );
+					if(!d.isLocked() || (d.isLocked() && player.getHasDoorKey()))
+					{
+						System.out.println("Do you want to traverse this magic portal? (It's a normal door)\nYou would go from "+ currentBuilding.getCurrentRoom().getName() + " to "+ d.getNextRoom().getName()+ "\n(y/n)");
+						Scanner inputScanner = new Scanner(System.in);
+						char choice = inputScanner.next().charAt(0);
+						
+						if(choice == 'y') {
+							player.setxPos(0);
+							player.setyPos(0);
+							//We are in a door! go to the next room
+							currentBuilding.setCurrentRoom(d.getNextRoom());
+							//player.setRoom(d.getNextRoom());
+							currentBuilding.getCurrentRoom().addEntity(player);
+							System.out.println("ROOM SWAP! Exiting "+ d.getCurrentRoom().getName() +" and Entering " + d.getNextRoom().getName() );
+						}
+						else {
+							System.out.println("Nothing happened here...");
+						}
 					}
-					else {
-						System.out.println("Nothing happened here...");
+					else
+					{
+						System.out.println("Sorry. This door is locked.");
 					}
 					
 				}
