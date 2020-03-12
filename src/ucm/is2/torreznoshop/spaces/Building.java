@@ -103,8 +103,16 @@ public class Building {
 		List<GameEntity> l7 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
-		l1.add(new NPC("Perrete de incognito",5, 0, habitacionInicial,0,2));
-		l2.add(new NPC("Ambrosio", 5, 10, pasillo, 5, 0));
+		NPC perroNpc= new NPC("Perrete de incognito",5, 0, habitacionInicial,0,2);
+		perroNpc.setMessage("*You hear a metallic jingle* WOOF, WOOF. It is a dog, they do not usually talk");
+		l1.add(perroNpc);
+		NPC ambrosioNpc = new NPC("Ambrosio", 5, 10, pasillo, 5, 0);
+		ambrosioNpc.setMessage("Ambrosio had a tough time in Vietnam. He does not feel like talking...");
+		l2.add(ambrosioNpc);
+		NPC braulioNpc = new NPC("Braulio", 5, 100, hall, 5, 5);
+		braulioNpc.setMessage("If only we could get the key to escape from here..");
+		l3.add(braulioNpc);
+		
 		
 		//Put the doors into a door list
 		List<Door> habitaInicial = new ArrayList<Door>();
@@ -167,7 +175,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = garden;
+		currentRoom = habitacionInicial;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);

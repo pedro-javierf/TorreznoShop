@@ -189,7 +189,7 @@ public class Controller {
 			{
 				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
 				{
-					if(!d.isLocked() || (d.isLocked() && player.getHasDoorKey()))
+					if(!d.isLocked() || (d.isLocked() && player.getHasDoorKey()));
 					{
 						System.out.println("Do you want to traverse this magic portal? (It's a normal door)\nYou would go from "+ currentBuilding.getCurrentRoom().getName() + " to "+ d.getNextRoom().getName()+ "\n(y/n)");
 						Scanner inputScanner = new Scanner(System.in);
@@ -207,10 +207,6 @@ public class Controller {
 						else {
 							System.out.println("Nothing happened here...");
 						}
-					}
-					else
-					{
-						System.out.println("Sorry. This door is locked.");
 					}
 					
 				}

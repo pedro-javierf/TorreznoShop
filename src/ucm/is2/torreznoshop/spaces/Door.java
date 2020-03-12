@@ -13,7 +13,7 @@ public class Door {
 	private int yPos;
 	
 	
-	Door(Room r1, Room r2, int x, int y, boolean lock)
+	public Door(Room r1, Room r2, int x, int y, boolean lock)
 	{
 		xPos = x;
 		yPos = y;

@@ -18,8 +18,7 @@ public String toString() {
 	return " P ";
 }
 
-public boolean getHasDoorKey()
-{return hasDoorKey;}
+
 
 public void setHasDoorKey(boolean value)
 {hasDoorKey=value;}
@@ -27,4 +26,9 @@ public void setHasDoorKey(boolean value)
 public String getName() {
 	return nameString;
 }
+
+public boolean getHasDoorKey() 
+	// TODO Auto-generated method stub
+	{return hasDoorKey;}
+
 }
