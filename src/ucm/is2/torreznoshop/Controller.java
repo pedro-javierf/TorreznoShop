@@ -114,10 +114,10 @@ public class Controller {
 	public void getInput()
 	{
 		System.out.println(Texts.MENU);
-		
+		List<GameEntity> entities = currentBuilding.getCurrentRoom().getEntityList();
 		Scanner inputScanner = new Scanner(System.in);
 		int choice = inputScanner.nextInt();
-		
+		boolean interacted = false;
 		switch(choice)
 		{
 		case(1)://move
@@ -127,7 +127,18 @@ public class Controller {
 				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
+			
+			for(GameEntity e : entities) {
+				if(canInteract(e)) {
+					interact(e);
+					interacted = true;
+				}
+			}
+		
+		if(!interacted) {
 			interactProto();
+		}
+		
 			break;
 		case(3)://consume torrezno
 			if(consumeTorreznos())
