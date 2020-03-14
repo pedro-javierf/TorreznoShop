@@ -3,6 +3,8 @@ package ucm.is2.torreznoshop.spaces;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import ucm.is2.torreznoshop.elements.GameEntity;
 import ucm.is2.torreznoshop.elements.NPC;
 import ucm.is2.torreznoshop.elements.Player;
@@ -103,15 +105,31 @@ public class Building {
 		List<GameEntity> l7 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
-		NPC perroNpc= new NPC("Perrete de incognito",5, 0, habitacionInicial,0,2);
-		perroNpc.setMessage("*You hear a metallic jingle* WOOF, WOOF. It is a dog, they do not usually talk");
+		NPC perroNpc= new NPC("Obviosly not a dog (dog)",5, 0, habitacionInicial,0,2);
+		perroNpc.setMessage("*You hear a metallic jingle* WOOF, WOOF. (It is a dog, they do not usually talk)");
 		l1.add(perroNpc);
+		
 		NPC ambrosioNpc = new NPC("Ambrosio", 5, 10, pasillo, 5, 0);
 		ambrosioNpc.setMessage("Ambrosio had a tough time in Vietnam. He does not feel like talking...");
 		l2.add(ambrosioNpc);
+		
 		NPC braulioNpc = new NPC("Braulio", 5, 100, hall, 5, 5);
-		braulioNpc.setMessage("If only we could get the key to escape from here..");
+		braulioNpc.setMessage("'If only we could get the key to escape from here...'");
 		l3.add(braulioNpc);
+		NPC apolonioNpc = new NPC("Apolonio", 5, 35, hall, 3, 2);
+		apolonioNpc.setMessage("'Shhh... Your blinking does not let me hear Saber y Ganar. Get out of here!'");
+		l3.add(apolonioNpc);
+		
+		NPC torcuatoNpc = new NPC("Torcuato", 5, 0, garden, 4, 6);
+		torcuatoNpc.setMessage("*Torcuato ignores your presence while he chain-smokes cigars*");
+		l4.add(torcuatoNpc);
+		NPC vallsNpc = new NPC("Arturo Valls bee", 100, 400000, garden, 5, 0);
+		vallsNpc.setMessage("Bzz, bzz. *Tells a bad joke and the elderly people laugh*");
+		l4.add(vallsNpc);
+		
+		NPC bonifacioNpc = new NPC("Bonifacio", 7, 5, comedor, 3, 3);
+		bonifacioNpc.setMessage("'I'm not moving from here until i have my beans!'");
+		l5.add(bonifacioNpc);
 		
 		
 		//Put the doors into a door list
@@ -175,7 +193,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = habitacionInicial;
+		currentRoom = garden;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);
