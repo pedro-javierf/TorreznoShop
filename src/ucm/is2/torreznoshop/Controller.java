@@ -22,6 +22,7 @@ public class Controller {
 	private boolean exit;
 	private boolean interactDog1 = false;
 	private boolean interactDog2 = false;
+	private boolean interactBraulio = false;
 	private Random rand;
 	private Store myInternalCharcutero;
 	static int turn = 1;
@@ -171,20 +172,31 @@ public class Controller {
 	
 	public void interact(GameEntity e) {
 		if(e.getName().equalsIgnoreCase("Obviosly not a dog (dog)")) {
-			if(!interactDog1 && !interactDog2) {
+			if(!interactDog1 && !interactDog2 && !interactBraulio) {
 				System.out.println(e.getMessage());
 				interactDog1 = true;
 			}
 			
-			else if(interactDog1 && !interactDog2) {
+			else if(interactDog1 && interactBraulio && !interactDog2) {
 				System.out.println(e.getLoreMessage());
 				System.out.println("You received a very strange key...");
 				player.setHasDoorKey(true);
 				interactDog2 = true;
 			}
 			
-			else if(interactDog1 && interactDog2) {
+			else {
 				System.out.println(e.getFinalMessage());
+			}
+		}
+		
+		else if(e.getName().equalsIgnoreCase("Braulio")) {
+			if(!interactBraulio) {
+				System.out.println(e.getMessage());
+				interactBraulio = true;
+			}
+			
+			else {
+				System.out.println(e.getLoreMessage());
 			}
 		}
 		

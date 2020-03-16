@@ -117,6 +117,7 @@ public class Building {
 		
 		NPC braulioNpc = new NPC("Braulio", 5, 100, hall, 5, 5);
 		braulioNpc.setMessage("'If only we could get the key to escape from here...'");
+		braulioNpc.setLoreMessage("In fact, there must must be a lost key. \n Last time i saw it, a weird animal had it...");
 		l3.add(braulioNpc);
 		NPC apolonioNpc = new NPC("Apolonio", 5, 35, hall, 3, 2);
 		apolonioNpc.setMessage("'Shhh... Your blinking does not let me hear Saber y Ganar. Get out of here!'");
