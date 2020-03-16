@@ -107,6 +107,8 @@ public class Building {
 		//Create entities for rooms
 		NPC perroNpc= new NPC("Obviosly not a dog (dog)",5, 0, habitacionInicial,0,2);
 		perroNpc.setMessage("*You hear a metallic jingle* WOOF, WOOF. (It is a dog, they do not usually talk)");
+		perroNpc.setLoreMessage("*The dog throws up a key*");
+		perroNpc.setFinalMessage("'Woof, woof :)'");
 		l1.add(perroNpc);
 		
 		NPC ambrosioNpc = new NPC("Ambrosio", 5, 10, pasillo, 5, 0);
@@ -193,7 +195,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = garden;
+		currentRoom = habitacionInicial;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);

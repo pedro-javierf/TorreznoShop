@@ -12,6 +12,8 @@ public class GameEntity {
 	String nameString;
 	Room currentRoom;
 	private String message;
+	private String loreMessage;
+	private String finalMessage;
 	
 	public GameEntity(int hp, int money, Room startingRoom, int startingY, int startingX)
 	{
@@ -132,6 +134,29 @@ public class GameEntity {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
+
+
+
+	public String getLoreMessage() {
+		return loreMessage;
+	}
+
+
+	public void setLoreMessage(String loreMessage) {
+		this.loreMessage = loreMessage;
+	}
+
+
+	public String getFinalMessage() {
+		return finalMessage;
+	}
+
+
+	public void setFinalMessage(String finalMessage) {
+		this.finalMessage = finalMessage;
+	}
+
 	
 	
 

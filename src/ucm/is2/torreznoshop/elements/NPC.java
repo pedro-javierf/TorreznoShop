@@ -7,7 +7,9 @@ public class NPC extends GameEntity {
 	private int money;
 	private int xPos;
 	private int yPos;
-	String message;
+	private String message;
+	private String loreMessage;
+	private String finalMessage;
 	String nameString;
 	
 	Room currentRoom;
@@ -36,6 +38,28 @@ public class NPC extends GameEntity {
 
 	public String getMessage() {
 		return message;
+	}
+	
+	
+
+
+	public String getLoreMessage() {
+		return loreMessage;
+	}
+
+
+	public void setLoreMessage(String loreMessage) {
+		this.loreMessage = loreMessage;
+	}
+
+
+	public String getFinalMessage() {
+		return finalMessage;
+	}
+
+
+	public void setFinalMessage(String finalMessage) {
+		this.finalMessage = finalMessage;
 	}
 
 
