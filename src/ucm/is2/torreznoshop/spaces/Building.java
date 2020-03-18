@@ -64,6 +64,8 @@ public class Building {
 		String habCocina = "Cocina";
 		//First room setup parameters
 		String habPas2 = "Pasillo de Gerencia";
+		//First room setup parameters
+		String habBoss = "Gerencia";
 		
 		int size = 3;
 		
@@ -76,6 +78,7 @@ public class Building {
 		Room comedor = new Room(habComedor, null, null, this, size+5, size+5);
 		Room kitchen = new Room(habCocina, null, null, this, size, size+5);
 		Room pasilloaBoss = new Room(habPas2, null, null, this, size+3, size-1);
+		Room bossRoom = new Room(habBoss, null, null, null, size + 4, size + 4);
 		
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1,false);
@@ -85,6 +88,7 @@ public class Building {
 		Door puertaAComedorporPas = new Door(pasillo, comedor, 3, 1,false);
 		Door puertaACocina = new Door(comedor, kitchen, 1, 0,false);
 		Door puertaAPasillo2 = new Door(garden, pasilloaBoss, 0, 4,false);
+		Door puertaBoss = new Door(pasilloaBoss, bossRoom, 4, 0,true);
 		
 		//Create the door now pointing in reverse order
 		Door puertaAHabitacion = new Door(pasillo, habitacionInicial, 0, 0,false);
@@ -94,7 +98,7 @@ public class Building {
 		Door puertaAComedorReverse = new Door(kitchen, comedor, 2, 5,false);
 		Door puertaAComedorReversePas = new Door(comedor, pasillo, 7, 3,false);
 		Door puertaaGardenReversePas2 = new Door(pasilloaBoss, garden, 2, 0,false);
-				
+		Door puertaAPasillo2Reverse = new Door(bossRoom, pasilloaBoss, 0, 3,false);
 		//Create an empty entity list
 		List<GameEntity> l1 = new ArrayList<GameEntity>();
 		List<GameEntity> l2 = new ArrayList<GameEntity>();
@@ -103,6 +107,7 @@ public class Building {
 		List<GameEntity> l5 = new ArrayList<GameEntity>();	
 		List<GameEntity> l6 = new ArrayList<GameEntity>();	
 		List<GameEntity> l7 = new ArrayList<GameEntity>();	
+		List<GameEntity> l8 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
 		NPC perroNpc= new NPC("Obviosly not a dog (dog)",5, 0, habitacionInicial,0,2);
@@ -163,6 +168,10 @@ public class Building {
 		
 		List<Door> habitaPasillo2 = new ArrayList<Door>();
 		habitaPasillo2.add(puertaaGardenReversePas2);
+		habitaPasillo2.add(puertaBoss);
+		
+		List<Door> habitaBoss= new ArrayList<Door>();
+		habitaBoss.add(puertaAPasillo2Reverse);
 		
 		
 		
@@ -181,6 +190,8 @@ public class Building {
 		kitchen.setEntityList(l6);
 		pasilloaBoss.setDoorList(habitaPasillo2);
 		pasilloaBoss.setEntityList(l7);
+		bossRoom.setDoorList(habitaBoss);
+		bossRoom.setEntityList(l8);
 		
 		
 		
@@ -193,10 +204,11 @@ public class Building {
 		comedor.setMessage("A huge lot of tables stand in front of you.\nThey are covered wiith tableloths with a very poor taste.\nIt smells like deep-fried food and hate for the human race.");
 		kitchen.setMessage("Here comes the magic of that smell. \nThere is a box with frozen meat inside.\nIn the box it is written: First quality meat (Stalingrad's Horse Stable, 1945)");
 		pasilloaBoss.setMessage("Smells like corrector pen. A dark presence is felt behind the other door");
+		bossRoom.setMessage("This is for what you trained your whole life. Will you be up to it?");
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = habitacionInicial;
+		currentRoom = pasilloaBoss;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);
@@ -211,7 +223,7 @@ public class Building {
 		roomList.add(comedor);
 		roomList.add(kitchen);
 		roomList.add(pasilloaBoss);
-		
+		roomList.add(bossRoom);
 		
 	}
 	
