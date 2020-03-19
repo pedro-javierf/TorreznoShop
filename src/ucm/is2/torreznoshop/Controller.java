@@ -198,9 +198,29 @@ public class Controller {
 			}
 		}
 		
+		else if(e.getName().equalsIgnoreCase("Pilar")) {
+			Scanner choiceScanner = new Scanner(System.in);
+			System.out.println("BOSS FIGHT!");
+			System.out.println("What will you do?");
+			System.out.println("(fight/flee)");
+			String choice = choiceScanner.next();
+			if(choice.equalsIgnoreCase("fight")) {
+				System.out.println("READY TO FIGHT, READY TO DIE! \n(Megalovania intensifies)");
+				fightBoss();
+			}
+			
+			else {
+				System.out.println("You choose to walk away by now...");
+			}
+		}
+		
 		else {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	private void fightBoss() {
+		
 	}
 	
 	private boolean canInteract(GameEntity e) {
