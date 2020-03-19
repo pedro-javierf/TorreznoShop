@@ -40,8 +40,6 @@ public class NPC extends GameEntity {
 		return message;
 	}
 	
-	
-
 
 	public String getLoreMessage() {
 		return loreMessage;

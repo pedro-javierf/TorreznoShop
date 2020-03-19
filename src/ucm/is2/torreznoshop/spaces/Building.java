@@ -208,7 +208,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = pasilloaBoss;
+		currentRoom = habitacionInicial;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);
