@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import ucm.is2.torreznoshop.elements.Boss;
 import ucm.is2.torreznoshop.elements.GameEntity;
 import ucm.is2.torreznoshop.elements.NPC;
 import ucm.is2.torreznoshop.elements.Player;
@@ -139,6 +140,10 @@ public class Building {
 		bonifacioNpc.setMessage("'I'm not moving from here until i have my beans!'");
 		l5.add(bonifacioNpc);
 		
+		Boss jefeFinal = new Boss("Pilar", 200, 10000, bossRoom, 3, 3, 10);
+		jefeFinal.setMessage("`What are you doing here?`");
+		l8.add(jefeFinal);
+		
 		
 		//Put the doors into a door list
 		List<Door> habitaInicial = new ArrayList<Door>();
@@ -208,7 +213,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = habitacionInicial;
+		currentRoom = bossRoom;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);
