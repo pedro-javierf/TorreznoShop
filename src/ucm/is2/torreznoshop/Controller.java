@@ -124,9 +124,7 @@ public class Controller {
 		switch(choice)
 		{
 		case(1)://move
-			if(askUserMove())
-				{System.out.println("success");}
-			else
+			if(!askUserMove())
 				{System.out.println("you can/t move theree my brudah");}
 			break;
 		case(2)://interact
@@ -234,8 +232,12 @@ public class Controller {
 			{
 				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
 				{
-					if(!d.isLocked() || (d.isLocked() && player.getHasDoorKey()));
+					if(d.isLocked() && !player.getHasDoorKey())
 					{
+						System.out.println("You need a key for traversing this door...");
+					}
+					
+					else {
 						System.out.println("Do you want to traverse this magic portal? (It's a normal door)\nYou would go from "+ currentBuilding.getCurrentRoom().getName() + " to "+ d.getNextRoom().getName()+ "\n(y/n)");
 						Scanner inputScanner = new Scanner(System.in);
 						char choice = inputScanner.next().charAt(0);
