@@ -121,12 +121,13 @@ public class Controller {
 		Scanner inputScanner = new Scanner(System.in);
 		int choice = inputScanner.nextInt();
 		boolean interacted = false;
-		switch(choice)
-		{
+		switch(choice){
+		
 		case(1)://move
 			if(!askUserMove())
 				{System.out.println("you can/t move theree my brudah");}
 			break;
+			
 		case(2)://interact
 			
 			for(GameEntity e : entities) {
@@ -136,17 +137,19 @@ public class Controller {
 				}
 			}
 		
-		if(!interacted) {
-			interactProto();
-		}
+			if(!interacted) {
+				interactProto();
+			}
 		
 			break;
+		
 		case(3)://consume torrezno
-			if(consumeTorreznos())
-				{System.out.println("success");}
-			else
-				{System.out.println("you don-t have so many torreznos bro");}
+			System.out.println("How many torreznos will you have? ");
+			Scanner torreznoScanner = new Scanner(System.in);
+			int torreznoNum = torreznoScanner.nextInt();
+			player.consumeTorreznos(torreznoNum);
 			break;
+			
 		case(4):
 			exit = true;
 			break;
@@ -237,6 +240,8 @@ public class Controller {
 		System.out.println("Turn: " + turn);
 		System.out.println("Balance: " + player.getMoney());	
 		System.out.println("Health (Out of 10): " + player.getHP());	
+		System.out.println("Available torreznos: " + player.getAvailableTorreznos());
+		System.out.println("Consumed torreznos: " + player.getConsumedTorreznos());
 	}
 	
 	protected void updateInteractions()
