@@ -225,25 +225,45 @@ public class Controller {
 	
 	private void fightBoss(GameEntity boss) {
 		int i = 0;
-		while(player.getHP() > 0 && boss.getHP() > 0) {
+		boolean fighting = true;
+		while(player.getHP() > 0 && boss.getHP() > 0 && fighting) {
 			if(i % 2 == 0) {
-				System.out.println("You attacked with a strength of: " + player.getAttackIdx());
-				player.attack(boss);
+				int action = fightMenu();
+				switch(action) {
+				case(1):
+					System.out.println("You attacked with a strength of: " + player.getAttackIdx());
+					player.attack(boss);
+					System.out.println(boss.getName() + " Health Points: " + boss.getHP());
+					break;
+				case(2):
+					System.out.println("How many torreznos will you have? ");
+					Scanner torreznoScanner = new Scanner(System.in);
+					int torreznoNum = torreznoScanner.nextInt();
+					player.consumeTorreznos(torreznoNum);
+					break;
+				case(3):
+					System.out.println("RUN BOY RUN!");
+					fighting = false;
+				}
 			}
 			
 			else {
 				System.out.println(boss.getName() + " attacked back!");
 				boss.attack(player);
+				System.out.println(player.getName() + " Health Points: " + player.getHP());
 			}
 			i++;
 		}
 	}
 	
-	private void fightMenu() {
+	private int fightMenu() {
 		System.out.println("What will you do now? ");
 		System.out.println("1. Attack");
 		System.out.println("2. Consume torreznos " + "(You have "+ player.getAvailableTorreznos()+ " torreznos)");
 		System.out.println("3. Flee");
+		Scanner fchoice = new Scanner(System.in);
+		int choice = fchoice.nextInt();
+		return choice;
 	}
 	
 	private boolean canInteract(GameEntity e) {
