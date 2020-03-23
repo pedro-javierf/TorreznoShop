@@ -254,6 +254,14 @@ public class Controller {
 			}
 			i++;
 		}
+		
+		if(player.getHP() <= 0) {
+			System.out.println("GAME OVER... U ARE A DEAD MAN...");
+		}
+		
+		else {
+			bossDefeated = true;
+		}
 	}
 	
 	private int fightMenu() {

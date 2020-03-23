@@ -142,6 +142,7 @@ public class Building {
 		
 		Boss jefeFinal = new Boss("Pilar", 200, 10000, bossRoom, 3, 3, 10);
 		jefeFinal.setMessage("`What are you doing here?`");
+		jefeFinal.setAttackIdx(5);
 		l8.add(jefeFinal);
 		
 		

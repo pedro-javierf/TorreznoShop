@@ -29,7 +29,7 @@ public class GameEntity {
 	}
 
 	public void attack(GameEntity e) {
-		
+		e.setHP(e.getHP() - attackIdx);
 	}
 	
 	
@@ -163,6 +163,16 @@ public class GameEntity {
 		this.finalMessage = finalMessage;
 	}
 
+	public int getAttackIdx() {
+		return attackIdx;
+	}
+
+	public void setAttackIdx(int attackIdx) {
+		this.attackIdx = attackIdx;
+	}
+
+	
+	
 	
 	
 
