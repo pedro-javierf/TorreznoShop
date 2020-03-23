@@ -11,12 +11,11 @@ public class Player extends GameEntity{
 	private int consumedTorreznos;
 	
 	
-	public Player(int hp, int money, Room startingRoom)
+	public Player(int hp, int money, Room startingRoom, int attackIdx)
 		{
-			super(hp, money, startingRoom, 0, 0);
+			super(hp, money, attackIdx, startingRoom, 0, 0);
 			nameString = "Manolo";
 			hasDoorKey = false;
-			attackIdx = 2;
 			availableTorreznos = 0;
 			consumedTorreznos = 0;
 		}

@@ -31,7 +31,7 @@ public class main {
 	int torreznos;
 	int tType;
 	static Random rand = new Random(); 	
-	static Controller c = new Controller(rand, new Player(10, 500, room), new Building(new ArrayList<Room>()));
+	static Controller c = new Controller(rand, new Player(10, 500, room, 2), new Building(new ArrayList<Room>()));
 
 	public static void main(String[] args) {
 		

@@ -5,7 +5,7 @@ import ucm.is2.torreznoshop.spaces.Room;
 public class GameEntity {
 	private int HP;
 	private int money;
-	private int vitalEnergy;
+	private int attackIdx;
 	private int xPos;
 	private int yPos;
 	private int torreznoCount;
@@ -15,10 +15,10 @@ public class GameEntity {
 	private String loreMessage;
 	private String finalMessage;
 	
-	public GameEntity(int hp, int money, Room startingRoom, int startingY, int startingX)
+	public GameEntity(int hp, int money, int attackIdx, Room startingRoom, int startingY, int startingX)
 	{
 		torreznoCount = 0;
-		vitalEnergy = 70;
+		this.attackIdx = attackIdx;
 		
 		xPos = startingX;
 		yPos = startingY;

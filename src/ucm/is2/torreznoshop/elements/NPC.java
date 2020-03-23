@@ -14,7 +14,7 @@ public class NPC extends GameEntity {
 	
 	Room currentRoom;
 	public NPC(String name,int hp, int money, Room startingRoom, int xpos, int posy) {
-		super(hp, money, startingRoom, xpos, posy);
+		super(hp, money, 0, startingRoom, xpos, posy);
 		this.nameString= name;
 	}
 	

@@ -10,7 +10,7 @@ class PlayerTest {
 
 	@Test
 	void testPlayer() {
-		Player pepe = new Player(100,2000,null);
+		Player pepe = new Player(100,2000,null, 2);
 		assertNotNull(pepe);
 	}
 

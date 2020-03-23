@@ -37,12 +37,12 @@ public class DrawablePlayer extends Player {
 	    
 	    
 	    public DrawablePlayer(int hp, int money, Room startingRoom) {
-			super(hp, money, startingRoom);
+			super(hp, money, startingRoom, 2);
 			// TODO Auto-generated constructor stub
 		}
 	    
 	    public DrawablePlayer() {
-	    	super(100, 2000, null);
+	    	super(100, 2000, null, 2);
 	        //loadImage();
 	    }
 
