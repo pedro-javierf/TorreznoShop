@@ -7,6 +7,7 @@ import java.util.Scanner;
 import javax.swing.text.html.parser.Entity;
 
 import ucm.is2.torreznoshop.elements.Player;
+import ucm.is2.torreznoshop.elements.Boss;
 import ucm.is2.torreznoshop.elements.GameEntity;
 import ucm.is2.torreznoshop.elements.Store;
 import ucm.is2.torreznoshop.spaces.Building;
@@ -209,7 +210,7 @@ public class Controller {
 			String choice = choiceScanner.next();
 			if(choice.equalsIgnoreCase("fight")) {
 				System.out.println("READY TO FIGHT, READY TO DIE! \n(Megalovania intensifies)");
-				fightBoss();
+				fightBoss(e);
 			}
 			
 			else {
@@ -222,8 +223,27 @@ public class Controller {
 		}
 	}
 	
-	private void fightBoss() {
-		
+	private void fightBoss(GameEntity boss) {
+		int i = 0;
+		while(player.getHP() > 0 && boss.getHP() > 0) {
+			if(i % 2 == 0) {
+				System.out.println("You attacked with a strength of: " + player.getAttackIdx());
+				player.attack(boss);
+			}
+			
+			else {
+				System.out.println(boss.getName() + " attacked back!");
+				boss.attack(player);
+			}
+			i++;
+		}
+	}
+	
+	private void fightMenu() {
+		System.out.println("What will you do now? ");
+		System.out.println("1. Attack");
+		System.out.println("2. Consume torreznos " + "(You have "+ player.getAvailableTorreznos()+ " torreznos)");
+		System.out.println("3. Flee");
 	}
 	
 	private boolean canInteract(GameEntity e) {
@@ -322,6 +342,8 @@ public class Controller {
 		}
 		return result;	
 	}
+	
+	
 	
 	public void sell() {
 		int torreznos = rand.nextInt(100); 

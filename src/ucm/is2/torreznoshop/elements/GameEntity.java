@@ -28,10 +28,16 @@ public class GameEntity {
 		this.currentRoom = startingRoom;
 	}
 
+	public void attack(GameEntity e) {
+		
+	}
+	
+	
 	public void setRoom(Room r)
 	{
 		currentRoom = r;
 	}
+	
 	
 	public Room getRoom()
 	{
