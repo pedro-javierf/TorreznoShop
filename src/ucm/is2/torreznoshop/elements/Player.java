@@ -6,7 +6,6 @@ public class Player extends GameEntity{
 	
 	private String nameString;
 	private boolean hasDoorKey;
-	private int attackIdx;
 	private int availableTorreznos;
 	private int consumedTorreznos;
 	
@@ -34,15 +33,7 @@ public class Player extends GameEntity{
 	public boolean getHasDoorKey() 
 		// TODO Auto-generated method stub
 		{return hasDoorKey;}
-	
-	public int getAttackIdx() {
-		return attackIdx;
-	}
-	
-	public void setAttackIdx(int attackIdx) {
-		this.attackIdx = attackIdx;
-	}
-	
+
 	public int getAvailableTorreznos() {
 		return availableTorreznos;
 	}
