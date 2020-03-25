@@ -81,6 +81,16 @@ public class Building {
 		Room pasilloaBoss = new Room(habPas2, null, null, this, size+3, size-1);
 		Room bossRoom = new Room(habBoss, null, null, null, size + 4, size + 4);
 		
+		//Assign messages
+		habitacionInicial.setMessage("You are in your room. Cozy, right? Smells like ibuprofeno");
+		pasillo.setMessage("Amazing hallway :O . You hear an old radio playing Frank Sinatra...\nSo nostalgic...");
+		hall.setMessage("You face a huge hall with sofas \nA really old tv is on playing saber y ganar.\nThe daylight fills the room through the windows. \nJordi Hurtado's smile fills your heart meanwhile...");
+		garden.setMessage("You found yourself in garden full of flower pots.\nYou see a bee with the face of Arturo Valls buzzing around.");
+		comedor.setMessage("A huge lot of tables stand in front of you.\nThey are covered wiith tableloths with a very poor taste.\nIt smells like deep-fried food and hate for the human race.");
+		kitchen.setMessage("Here comes the magic of that smell. \nThere is a box with frozen meat inside.\nIn the box it is written: First quality meat (Stalingrad's Horse Stable, 1945)");
+		pasilloaBoss.setMessage("Smells like corrector pen. A dark presence is felt behind the other door");
+		bossRoom.setMessage("This is for what you trained your whole life. Will you be up to it?");
+		
 		//Creates one door asigned to these (empty) objects (rooms)
 		Door puertaAPasillo = new Door(habitacionInicial, pasillo, 0, 1,false);
 		Door puertaAHall = new Door(pasillo, hall, 6, 1,false);
@@ -111,32 +121,32 @@ public class Building {
 		List<GameEntity> l8 = new ArrayList<GameEntity>();	
 		
 		//Create entities for rooms
-		NPC perroNpc= new NPC("Obviosly not a dog (dog)",5, 0, habitacionInicial,0,2);
+		NPC perroNpc= new NPC("Obviosly not a dog (dog)",5, 0, habitacionInicial,0,2, false);
 		perroNpc.setMessage("*You hear a metallic jingle* WOOF, WOOF. (It is a dog, they do not usually talk)");
 		perroNpc.setLoreMessage("*The dog throws up a key*");
 		perroNpc.setFinalMessage("'Woof, woof :)'");
 		l1.add(perroNpc);
 		
-		NPC ambrosioNpc = new NPC("Ambrosio", 5, 10, pasillo, 5, 0);
+		NPC ambrosioNpc = new NPC("Ambrosio", 5, 10, pasillo, 5, 0, false);
 		ambrosioNpc.setMessage("Ambrosio had a tough time in Vietnam. He does not feel like talking...");
 		l2.add(ambrosioNpc);
 		
-		NPC braulioNpc = new NPC("Braulio", 5, 100, hall, 5, 5);
+		NPC braulioNpc = new NPC("Braulio", 5, 100, hall, 5, 5, false);
 		braulioNpc.setMessage("'If only we could get the key to escape from here...'");
 		braulioNpc.setLoreMessage("In fact, there must must be a lost key. \n Last time i saw it, a weird animal had it...");
 		l3.add(braulioNpc);
-		NPC apolonioNpc = new NPC("Apolonio", 5, 35, hall, 3, 2);
+		NPC apolonioNpc = new NPC("Apolonio", 5, 35, hall, 3, 2, true);
 		apolonioNpc.setMessage("'Shhh... Your blinking does not let me hear Saber y Ganar. Get out of here!'");
 		l3.add(apolonioNpc);
 		
-		NPC torcuatoNpc = new NPC("Torcuato", 5, 0, garden, 4, 6);
+		NPC torcuatoNpc = new NPC("Torcuato", 5, 0, garden, 4, 6, true);
 		torcuatoNpc.setMessage("*Torcuato ignores your presence while he chain-smokes cigars*");
 		l4.add(torcuatoNpc);
-		NPC vallsNpc = new NPC("Arturo Valls bee", 100, 400000, garden, 5, 0);
+		NPC vallsNpc = new NPC("Arturo Valls bee", 100, 400000, garden, 5, 0, true);
 		vallsNpc.setMessage("Bzz, bzz. *Tells a bad joke and the elderly people laugh*");
 		l4.add(vallsNpc);
 		
-		NPC bonifacioNpc = new NPC("Bonifacio", 7, 5, comedor, 3, 3);
+		NPC bonifacioNpc = new NPC("Bonifacio", 7, 5, comedor, 3, 3, false);
 		bonifacioNpc.setMessage("'I'm not moving from here until i have my beans!'");
 		l5.add(bonifacioNpc);
 		
@@ -199,22 +209,10 @@ public class Building {
 		bossRoom.setDoorList(habitaBoss);
 		bossRoom.setEntityList(l8);
 		
-		
-		
-		
-		//Assign messages
-		habitacionInicial.setMessage("You are in your room. Cozy, right? Smells like ibuprofeno");
-		pasillo.setMessage("Amazing hallway :O . You hear an old radio playing Frank Sinatra...\nSo nostalgic...");
-		hall.setMessage("You face a huge hall with sofas \nA really old tv is on playing saber y ganar.\nThe daylight fills the room through the windows. \nJordi Hurtado's smile fills your heart meanwhile...");
-		garden.setMessage("You found yourself in garden full of flower pots.\nYou see a bee with the face of Arturo Valls buzzing around.");
-		comedor.setMessage("A huge lot of tables stand in front of you.\nThey are covered wiith tableloths with a very poor taste.\nIt smells like deep-fried food and hate for the human race.");
-		kitchen.setMessage("Here comes the magic of that smell. \nThere is a box with frozen meat inside.\nIn the box it is written: First quality meat (Stalingrad's Horse Stable, 1945)");
-		pasilloaBoss.setMessage("Smells like corrector pen. A dark presence is felt behind the other door");
-		bossRoom.setMessage("This is for what you trained your whole life. Will you be up to it?");
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = bossRoom;
+		currentRoom = habitacionInicial;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);
@@ -232,5 +230,6 @@ public class Building {
 		roomList.add(bossRoom);
 		
 	}
+	
 	
 }

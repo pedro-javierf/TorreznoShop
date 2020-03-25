@@ -14,8 +14,9 @@ public class GameEntity {
 	private String message;
 	private String loreMessage;
 	private String finalMessage;
+	private boolean haveTorreznos;
 	
-	public GameEntity(int hp, int money, int attackIdx, Room startingRoom, int startingY, int startingX)
+	public GameEntity(int hp, int money, int attackIdx, Room startingRoom, int startingY, int startingX, boolean haveTorreznos)
 	{
 		torreznoCount = 0;
 		this.attackIdx = attackIdx;
@@ -26,6 +27,7 @@ public class GameEntity {
 		this.HP=hp;
 		this.money=money;
 		this.currentRoom = startingRoom;
+		this.haveTorreznos = haveTorreznos;
 	}
 
 	public void attack(GameEntity e) {

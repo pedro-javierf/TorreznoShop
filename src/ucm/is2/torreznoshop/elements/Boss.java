@@ -12,7 +12,7 @@ public class Boss extends NPC {
 	private int attackIdx;
 
 	public Boss(String name, int hp, int money, Room startingRoom, int xpos, int posy, int attack) {
-		super(name, hp, money, startingRoom, xpos, posy);
+		super(name, hp, money, startingRoom, xpos, posy, false);
 		attackIdx = attack;
 	}
 	
