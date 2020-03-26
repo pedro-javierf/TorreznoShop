@@ -139,12 +139,20 @@ public class Building {
 		apolonioNpc.setMessage("'Shhh... Your blinking does not let me hear Saber y Ganar. Get out of here!'");
 		l3.add(apolonioNpc);
 		
+		apolonioNpc.setTorreznoCount(10);
+		
 		NPC torcuatoNpc = new NPC("Torcuato", 5, 0, garden, 4, 6, true);
 		torcuatoNpc.setMessage("*Torcuato ignores your presence while he chain-smokes cigars*");
 		l4.add(torcuatoNpc);
+		
+		torcuatoNpc.setTorreznoCount(35);
+		
+		
 		NPC vallsNpc = new NPC("Arturo Valls bee", 100, 400000, garden, 5, 0, true);
 		vallsNpc.setMessage("Bzz, bzz. *Tells a bad joke and the elderly people laugh*");
 		l4.add(vallsNpc);
+		
+		torcuatoNpc.setTorreznoCount(1000);
 		
 		NPC bonifacioNpc = new NPC("Bonifacio", 7, 5, comedor, 3, 3, false);
 		bonifacioNpc.setMessage("'I'm not moving from here until i have my beans!'");
@@ -212,7 +220,7 @@ public class Building {
 		//Build the room
 		//habitacionInicial = new Room(habInit, habitaInicial, l1, this, size, size);
 		
-		currentRoom = habitacionInicial;
+		currentRoom = hall;
 		
 		//Add to the building
 		roomList.add(habitacionInicial);

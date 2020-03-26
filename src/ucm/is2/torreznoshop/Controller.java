@@ -173,32 +173,38 @@ public class Controller {
 	}
 	
 	public void interact(GameEntity e) {
+		if(e.HaveTorreznos()) {
+			System.out.println(e.getName() + " has " + e.getTorreznoCount() + " torreznos!!!");
+		}
+		
+		
+		//SPECIAL CASES
 		if(e.getName().equalsIgnoreCase("Obviosly not a dog (dog)")) {
 			if(!interactDog1 && !interactDog2 && !interactBraulio) {
-				System.out.println(e.getMessage());
+				System.out.println(e.getName() + ": " + e.getMessage());
 				interactDog1 = true;
 			}
 			
 			else if(interactDog1 && interactBraulio && !interactDog2) {
-				System.out.println(e.getLoreMessage());
+				System.out.println(e.getName() + ": " + e.getLoreMessage());
 				System.out.println("You received a very strange key...");
 				player.setHasDoorKey(true);
 				interactDog2 = true;
 			}
 			
 			else {
-				System.out.println(e.getFinalMessage());
+				System.out.println(e.getName() + ": " + e.getFinalMessage());
 			}
 		}
 		
 		else if(e.getName().equalsIgnoreCase("Braulio")) {
 			if(!interactBraulio) {
-				System.out.println(e.getMessage());
+				System.out.println(e.getName() + ": " + e.getMessage());
 				interactBraulio = true;
 			}
 			
 			else {
-				System.out.println(e.getLoreMessage());
+				System.out.println(e.getName() + ": " + e.getLoreMessage());
 			}
 		}
 		
@@ -219,7 +225,7 @@ public class Controller {
 		}
 		
 		else {
-			System.out.println(e.getMessage());
+			System.out.println(e.getName() + ": " + e.getMessage());
 		}
 	}
 	
@@ -295,10 +301,7 @@ public class Controller {
 	protected void updateInteractions()
 	{
 		List<Door> doors = currentBuilding.getCurrentRoom().getDoorList();
-		List<GameEntity> entities = currentBuilding.getCurrentRoom().getEntityList();
 		
-		
-
 		for(Door d: doors)
 		{
 

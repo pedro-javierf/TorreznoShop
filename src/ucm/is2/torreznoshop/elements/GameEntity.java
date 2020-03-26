@@ -35,6 +35,16 @@ public class GameEntity {
 	}
 	
 	
+	
+	
+	public int getTorreznoCount() {
+		return torreznoCount;
+	}
+
+	public void setTorreznoCount(int torreznoCount) {
+		this.torreznoCount = torreznoCount;
+	}
+
 	public void setRoom(Room r)
 	{
 		currentRoom = r;
@@ -173,6 +183,15 @@ public class GameEntity {
 		this.attackIdx = attackIdx;
 	}
 
+	public boolean HaveTorreznos() {
+		return haveTorreznos;
+	}
+
+	public void setHaveTorreznos(boolean haveTorreznos) {
+		this.haveTorreznos = haveTorreznos;
+	}
+
+	
 	
 	
 	
