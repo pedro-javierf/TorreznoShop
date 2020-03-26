@@ -301,9 +301,8 @@ public class Controller {
 
 		for(Door d: doors)
 		{
-			for(GameEntity g: entities)
-			{
-				if(g.getY()==d.getXpos() && g.getX()==d.getYpos())
+
+				if(player.getY()==d.getXpos() && player.getX()==d.getYpos())
 				{
 					if(d.isLocked() && !player.getHasDoorKey())
 					{
@@ -333,7 +332,6 @@ public class Controller {
 			}
 		}
 				
-	}
 	
 	public boolean update()
 	{
