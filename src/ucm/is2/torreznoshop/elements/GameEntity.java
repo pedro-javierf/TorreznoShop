@@ -184,7 +184,7 @@ public class GameEntity {
 	}
 
 	public boolean HaveTorreznos() {
-		return haveTorreznos;
+		return haveTorreznos && torreznoCount > 0;
 	}
 
 	public void setHaveTorreznos(boolean haveTorreznos) {

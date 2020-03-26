@@ -175,6 +175,16 @@ public class Controller {
 	public void interact(GameEntity e) {
 		if(e.HaveTorreznos()) {
 			System.out.println(e.getName() + " has " + e.getTorreznoCount() + " torreznos!!!");
+			System.out.println("Wanna try to have some? (y/n)");
+			Scanner tchoiceScanner = new Scanner(System.in);
+			String choice = tchoiceScanner.next();
+			if(choice.equalsIgnoreCase("y")) {
+				askForTorreznos(e);
+			}
+			
+			else {
+				System.out.println("Maybe next time...");
+			}
 		}
 		
 		
@@ -227,6 +237,17 @@ public class Controller {
 		else {
 			System.out.println(e.getName() + ": " + e.getMessage());
 		}
+	}
+	
+	private void askForTorreznos(GameEntity e) {
+		Random torRandom = new Random();
+		System.out.println("Player: Ei boss! Can i have a crumb of torrezno, pls?");
+		System.out.println(e.getName() + ": Okay, have some.");
+		int torreznoNum = torRandom.nextInt(e.getTorreznoCount());
+		System.out.println("You received " + torreznoNum + " torreznos.");
+		player.setAvailableTorreznos(player.getAvailableTorreznos()+ torreznoNum);
+		
+		
 	}
 	
 	private void fightBoss(GameEntity boss) {
